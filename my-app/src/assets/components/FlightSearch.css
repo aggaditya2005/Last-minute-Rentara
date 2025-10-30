@@ -1,0 +1,218 @@
+.ai-predictor-page {
+  min-height: 100vh;
+  background: #e3f2fd;
+  /* Light blue background */
+  font-family: 'Poppins', sans-serif;
+  padding-bottom: 50px;
+}
+
+.ai-navbar {
+  background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand h2 {
+  color: white;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.back-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.ai-predictor-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.predictor-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-top: 5px solid #2e7d32;
+}
+
+.predictor-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1b5e20;
+  /* Dark Green */
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ai-icon {
+  font-size: 2.2rem;
+}
+
+.predictor-subtitle {
+  font-size: 1rem;
+  color: #546e7a;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 1rem;
+}
+
+.ai-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #37474f;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  display: block;
+}
+
+.ai-select {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  background: white;
+  appearance: none;
+  /* Remove default dropdown arrow */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem top 50%;
+  background-size: 0.8rem auto;
+}
+
+.ai-select:focus {
+  outline: none;
+  border-color: #388e3c;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+.predict-btn {
+  grid-column: 1 / -1;
+  /* Span full width */
+  padding: 1.2rem 2rem;
+  background: linear-gradient(135deg, #2e7d32 0%, #388e3c 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(46, 125, 50, 0.4);
+}
+
+.predict-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.6);
+}
+
+.predict-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background: #a5d6a7;
+}
+
+/* Result Box */
+.prediction-result-box {
+  margin-top: 3rem;
+  padding: 2rem;
+  border-radius: 12px;
+  background: #f1f8e9;
+  /* Very light green */
+  border: 1px dashed #4caf50;
+  text-align: center;
+}
+
+.prediction-success {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.result-label {
+  font-size: 1.1rem;
+  color: #388e3c;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.result-price {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #1b5e20;
+  display: block;
+}
+
+.result-note {
+  font-size: 0.95rem;
+  color: #777;
+  margin-top: 1rem;
+}
+
+.result-error {
+  color: #c62828;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.result-placeholder {
+  color: #999;
+  font-style: italic;
+  padding: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ai-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .predictor-card {
+    padding: 1.5rem;
+  }
+
+  .result-price {
+    font-size: 3rem;
+  }
+}

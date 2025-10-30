@@ -1,0 +1,176 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #f9fafb;
+  color: #1e293b;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e3a8a;
+  padding: 15px 30px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ffffffcc;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+/* Services Section */
+.services-section {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.services-section h2 {
+  color: #1e40af;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.services-section p {
+  color: #475569;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.plans-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.plan-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+}
+
+.plan-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.plan-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.plan-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.plan-card ul li {
+  margin: 8px 0;
+}
+
+.plan-card .price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.plan-card button {
+  background: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.plan-card button:hover {
+  background: #1e40af;
+}
+
+/* Special Colors */
+.valueable {
+  color: #d97706;
+}
+
+.platinum {
+  color: #6b7280;
+}
+
+.diamond {
+  color: #0ea5e9;
+}
+
+.valueable+.price {
+  color: #d97706;
+}
+
+.platinum+.price {
+  color: #6b7280;
+}
+
+.diamond+.price {
+  color: #0ea5e9;
+}
+
+/* Footer */
+.footer {
+  background: #1e3a8a;
+  color: #f9fafb;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.footer li {
+  margin: 8px 0;
+}
+
+.footer p {
+  margin-top: 15px;
+  font-style: italic;
+  color: #93c5fd;
+}

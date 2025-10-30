@@ -1,0 +1,106 @@
+/* Rentara Intro Styles */
+.rentara-intro-container {
+  background: #0f172a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: opacity 1.5s ease;
+}
+
+.rentara-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #ff4d6d;
+  text-shadow:
+    0 0 10px #ff4d6d,
+    0 0 20px #ff99b3,
+    0 0 40px #ffccd6;
+  letter-spacing: 5px;
+  animation: glow 2s infinite alternate;
+}
+
+.rentara-slogan {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 10px;
+  text-align: center;
+  letter-spacing: 2px;
+  transition: opacity 1s ease-in-out;
+}
+
+.rentara-facts {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 30px;
+  max-width: 600px;
+  text-align: center;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Glow Animation */
+@keyframes glow {
+  from {
+    text-shadow:
+      0 0 10px #ff4d6d,
+      0 0 20px #ff99b3,
+      0 0 40px #ffccd6;
+  }
+
+  to {
+    text-shadow:
+      0 0 20px #ff4d6d,
+      0 0 30px #ff99b3,
+      0 0 60px #ffccd6,
+      0 0 80px #ffccd6;
+  }
+}
+
+/* Fade effect */
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .rentara-title {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+  }
+
+  .rentara-slogan {
+    font-size: 1.2rem;
+    padding: 0 20px;
+  }
+
+  .rentara-facts {
+    font-size: 1rem;
+    padding: 0 20px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .rentara-title {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+
+  .rentara-slogan {
+    font-size: 1rem;
+  }
+
+  .rentara-facts {
+    font-size: 0.9rem;
+  }
+}
