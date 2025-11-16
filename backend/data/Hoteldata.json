@@ -1,0 +1,1237 @@
+{
+  "hotels": [
+    {
+      "id": "DL001",
+      "name": "The Leela Palace",
+      "city": "Delhi",
+      "location": "Chanakyapuri",
+      "rating": 4.8,
+      "pricePerNight": 12500,
+      "propertyType": "Luxury Hotel",
+      "amenities": [
+        "Free WiFi",
+        "Spa",
+        "Pool",
+        "Gym",
+        "Restaurant"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "India Gate",
+          "distanceKm": 3.2
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg",
+      "reviews": [
+        "Beautiful luxury hotel with exceptional service.",
+        "Rooms are stunning and extremely comfortable.",
+        "Breakfast variety and taste were excellent."
+      ]
+    },
+    {
+      "id": "DL002",
+      "name": "ITC Maurya",
+      "city": "Delhi",
+      "location": "Diplomatic Enclave",
+      "rating": 4.7,
+      "pricePerNight": 9000,
+      "propertyType": "Premium Hotel",
+      "amenities": [
+        "Pool",
+        "Restaurant",
+        "Spa",
+        "Bar"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Rashtrapati Bhavan",
+          "distanceKm": 2.1
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/237371/pexels-photo-237371.jpeg",
+      "reviews": [
+        "Great hotel with amazing food options.",
+        "Warm hospitality and well-maintained rooms.",
+        "Very peaceful and secure location."
+      ]
+    },
+    {
+      "id": "DL003",
+      "name": "Radisson Blu Plaza",
+      "city": "Delhi",
+      "location": "Mahipalpur",
+      "rating": 4.4,
+      "pricePerNight": 5800,
+      "propertyType": "Business Hotel",
+      "amenities": [
+        "Free WiFi",
+        "Pool",
+        "Airport Shuttle"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Aerocity",
+          "distanceKm": 2.5
+        }
+      ],
+      "mealPlan": "Room Only",
+      "image": "https://images.pexels.com/photos/261187/pexels-photo-261187.jpeg",
+      "reviews": [
+        "Convenient for airport travel, clean rooms.",
+        "Buffet breakfast was very enjoyable.",
+        "Perfect for business stays."
+      ]
+    },
+    {
+      "id": "MB001",
+      "name": "Trident Nariman Point",
+      "city": "Mumbai",
+      "location": "Nariman Point",
+      "rating": 4.7,
+      "pricePerNight": 14000,
+      "propertyType": "Sea View Luxury Hotel",
+      "amenities": [
+        "Sea View",
+        "Pool",
+        "Spa",
+        "Restaurant"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Marine Drive",
+          "distanceKm": 0.1
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/261187/pexels-photo-261187.jpeg",
+      "reviews": [
+        "Amazing sea views and peaceful environment.",
+        "Best location in Mumbai for tourists.",
+        "Rooms are elegant and well-designed."
+      ]
+    },
+    {
+      "id": "MB002",
+      "name": "The Taj Mahal Palace",
+      "city": "Mumbai",
+      "location": "Colaba",
+      "rating": 4.9,
+      "pricePerNight": 21000,
+      "propertyType": "Luxury Palace Hotel",
+      "amenities": [
+        "Pool",
+        "Historic Property",
+        "Spa",
+        "Fine Dining"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Gateway of India",
+          "distanceKm": 0.2
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg",
+      "reviews": [
+        "Iconic hotel with stunning architecture.",
+        "Exceptional hospitality and ambience.",
+        "Feels incredibly royal and luxurious."
+      ]
+    },
+    {
+      "id": "MB003",
+      "name": "Sahara Star",
+      "city": "Mumbai",
+      "location": "Vile Parle",
+      "rating": 4.4,
+      "pricePerNight": 8200,
+      "propertyType": "Business Hotel",
+      "amenities": [
+        "Pool",
+        "Restaurant",
+        "Gym",
+        "Bar"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Juhu Beach",
+          "distanceKm": 4.5
+        }
+      ],
+      "mealPlan": "Room Only",
+      "image": "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg",
+      "reviews": [
+        "Unique indoor design and spacious rooms.",
+        "Close to the airport, very convenient.",
+        "Breakfast options were good."
+      ]
+    },
+    {
+      "id": "BN001",
+      "name": "Taj West End",
+      "city": "Bangalore",
+      "location": "Race Course Road",
+      "rating": 4.6,
+      "pricePerNight": 10500,
+      "propertyType": "Heritage Luxury Hotel",
+      "amenities": [
+        "Garden",
+        "Pool",
+        "Spa",
+        "Free WiFi"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Cubbon Park",
+          "distanceKm": 1.4
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/261327/pexels-photo-261327.jpeg",
+      "reviews": [
+        "Feels like a forest retreat inside the city.",
+        "Exceptional hospitality and peaceful surroundings.",
+        "Rooms are elegant and spacious."
+      ]
+    },
+    {
+      "id": "BN002",
+      "name": "The Oberoi Bengaluru",
+      "city": "Bangalore",
+      "location": "MG Road",
+      "rating": 4.8,
+      "pricePerNight": 12500,
+      "propertyType": "Luxury Hotel",
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Restaurant",
+        "Butler Service"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "UB City",
+          "distanceKm": 2.0
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/2850487/pexels-photo-2850487.jpeg",
+      "reviews": [
+        "Beautiful gardens and amazing ambience.",
+        "Top quality service as expected from Oberoi.",
+        "Perfect for a luxury getaway."
+      ]
+    },
+    {
+      "id": "BN003",
+      "name": "Aloft Bengaluru",
+      "city": "Bangalore",
+      "location": "Whitefield",
+      "rating": 4.3,
+      "pricePerNight": 6100,
+      "propertyType": "Business Hotel",
+      "amenities": [
+        "Free WiFi",
+        "Pool",
+        "Gym",
+        "Restaurant"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Phoenix Mall",
+          "distanceKm": 1.8
+        }
+      ],
+      "mealPlan": "Room Only",
+      "image": "https://images.pexels.com/photos/261061/pexels-photo-261061.jpeg",
+      "reviews": [
+        "Good for business travelers.",
+        "Rooms are modern and well-equipped.",
+        "Staff is friendly and helpful."
+      ]
+    },
+    {
+      "id": "KL001",
+      "name": "The Oberoi Grand",
+      "city": "Kolkata",
+      "location": "Esplanade",
+      "rating": 4.7,
+      "pricePerNight": 11500,
+      "propertyType": "Heritage Luxury Hotel",
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Restaurant"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Victoria Memorial",
+          "distanceKm": 2.3
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/261169/pexels-photo-261169.jpeg",
+      "reviews": [
+        "Classic colonial charm with luxury amenities.",
+        "Well-maintained and centrally located.",
+        "Food quality is top-notch."
+      ]
+    },
+    {
+      "id": "KL002",
+      "name": "ITC Sonar",
+      "city": "Kolkata",
+      "location": "Science City Area",
+      "rating": 4.6,
+      "pricePerNight": 9500,
+      "propertyType": "Luxury Hotel",
+      "amenities": [
+        "Spa",
+        "Pool",
+        "Restaurant"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Science City",
+          "distanceKm": 1.1
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/261346/pexels-photo-261346.jpeg",
+      "reviews": [
+        "Peaceful ambience and lovely gardens.",
+        "Rooms are clean and comfortable.",
+        "Great value for money."
+      ]
+    },
+    {
+      "id": "KL003",
+      "name": "Novotel Kolkata",
+      "city": "Kolkata",
+      "location": "New Town",
+      "rating": 4.2,
+      "pricePerNight": 6600,
+      "propertyType": "Business Hotel",
+      "amenities": [
+        "Pool",
+        "Gym",
+        "Restaurant"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Eco Park",
+          "distanceKm": 2.5
+        }
+      ],
+      "mealPlan": "Room Only",
+      "image": "https://images.pexels.com/photos/537109/pexels-photo-537109.jpeg",
+      "reviews": [
+        "Good hotel at a convenient location.",
+        "Rooms are nicely decorated.",
+        "Staff is very helpful and polite."
+      ]
+    },
+    {
+      "id": "CH001",
+      "name": "ITC Grand Chola",
+      "city": "Chennai",
+      "location": "Guindy",
+      "rating": 4.8,
+      "pricePerNight": 13000,
+      "propertyType": "Luxury Hotel",
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Fine Dining"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Guindy Park",
+          "distanceKm": 1.0
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/261101/pexels-photo-261101.jpeg",
+      "reviews": [
+        "Grand architecture and luxurious rooms.",
+        "Amazing breakfast choices.",
+        "Feels like a palace hotel."
+      ]
+    },
+    {
+      "id": "CH002",
+      "name": "The Park Chennai",
+      "city": "Chennai",
+      "location": "Anna Salai",
+      "rating": 4.1,
+      "pricePerNight": 5700,
+      "propertyType": "Boutique Hotel",
+      "amenities": [
+        "Pool",
+        "Restaurant",
+        "Bar"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Marina Beach",
+          "distanceKm": 2.8
+        }
+      ],
+      "mealPlan": "Room Only",
+      "image": "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg",
+      "reviews": [
+        "Nice boutique-style interiors.",
+        "Close to main city attractions.",
+        "Good value for mid-range pricing."
+      ]
+    },
+    {
+      "id": "CH003",
+      "name": "Radisson Blu City Centre",
+      "city": "Chennai",
+      "location": "Egmore",
+      "rating": 4.3,
+      "pricePerNight": 6800,
+      "propertyType": "Business Hotel",
+      "amenities": [
+        "Free WiFi",
+        "Pool",
+        "Gym"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Egmore Museum",
+          "distanceKm": 1.3
+        }
+      ],
+      "mealPlan": "Room Only",
+      "image": "https://images.pexels.com/photos/537098/pexels-photo-537098.jpeg",
+      "reviews": [
+        "Clean rooms and excellent staff.",
+        "Good business facilities.",
+        "Food was tasty and well presented."
+      ]
+    },
+    {
+      "id": "HY001",
+      "name": "Taj Falaknuma Palace",
+      "city": "Hyderabad",
+      "location": "Falaknuma",
+      "rating": 4.9,
+      "pricePerNight": 18000,
+      "propertyType": "Palace Hotel",
+      "amenities": [
+        "Palace Tour",
+        "Spa",
+        "Fine Dining",
+        "Heritage Property"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Charminar",
+          "distanceKm": 4.2
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg",
+      "reviews": [
+        "A truly royal experience, felt like a Nizam.",
+        "Views and architecture are breathtaking.",
+        "Staff is extremely courteous and warm."
+      ]
+    },
+    {
+      "id": "HY002",
+      "name": "ITC Kohenur",
+      "city": "Hyderabad",
+      "location": "HITEC City",
+      "rating": 4.7,
+      "pricePerNight": 10500,
+      "propertyType": "Luxury Hotel",
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Gym",
+        "Restaurant"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Inorbit Mall",
+          "distanceKm": 1.8
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/261187/pexels-photo-261187.jpeg",
+      "reviews": [
+        "Modern luxury with amazing lake views.",
+        "Rooms are well-designed and spacious.",
+        "Perfect for business travellers."
+      ]
+    },
+    {
+      "id": "HY003",
+      "name": "Novotel Hyderabad Convention Centre",
+      "city": "Hyderabad",
+      "location": "HITEX",
+      "rating": 4.3,
+      "pricePerNight": 7200,
+      "propertyType": "Business Hotel",
+      "amenities": [
+        "Pool",
+        "Fitness Center",
+        "Convention Hall"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Shilparamam",
+          "distanceKm": 1.0
+        }
+      ],
+      "mealPlan": "Room Only",
+      "image": "https://images.pexels.com/photos/537109/pexels-photo-537109.jpeg",
+      "reviews": [
+        "Ideal for events and conferences.",
+        "Good breakfast spread.",
+        "Comfortable rooms and friendly staff."
+      ]
+    },
+    {
+      "id": "PN001",
+      "name": "JW Marriott Pune",
+      "city": "Pune",
+      "location": "SB Road",
+      "rating": 4.6,
+      "pricePerNight": 9500,
+      "propertyType": "Luxury Business Hotel",
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Restaurant",
+        "Gym"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Shaniwar Wada",
+          "distanceKm": 3.4
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/553142/pexels-photo-553142.jpeg",
+      "reviews": [
+        "Perfect for business stays.",
+        "Excellent food and superb service.",
+        "Centrally located with clean rooms."
+      ]
+    },
+    {
+      "id": "PN002",
+      "name": "The Westin Pune",
+      "city": "Pune",
+      "location": "Koregaon Park",
+      "rating": 4.5,
+      "pricePerNight": 8600,
+      "propertyType": "Lifestyle Hotel",
+      "amenities": [
+        "Pool",
+        "Bar",
+        "Restaurant",
+        "Spa"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Osho Ashram",
+          "distanceKm": 1.1
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/6267/hotel-bed-bedroom-room.jpg",
+      "reviews": [
+        "Trendy hotel with excellent ambience.",
+        "Rooms are modern and spacious.",
+        "Koregaon Park vibe is amazing."
+      ]
+    },
+    {
+      "id": "PN003",
+      "name": "Hyatt Pune",
+      "city": "Pune",
+      "location": "Viman Nagar",
+      "rating": 4.2,
+      "pricePerNight": 6200,
+      "propertyType": "Business Hotel",
+      "amenities": [
+        "Pool",
+        "Gym",
+        "Restaurant"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Phoenix Marketcity",
+          "distanceKm": 0.9
+        }
+      ],
+      "mealPlan": "Room Only",
+      "image": "https://images.pexels.com/photos/261327/pexels-photo-261327.jpeg",
+      "reviews": [
+        "Very close to the airport.",
+        "Rooms are neat and comfortable.",
+        "Good for short business trips."
+      ]
+    },
+    {
+      "id": "AH001",
+      "name": "Hyatt Regency Ahmedabad",
+      "city": "Ahmedabad",
+      "location": "Ashram Road",
+      "rating": 4.5,
+      "pricePerNight": 9000,
+      "propertyType": "Luxury Hotel",
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Gym"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Sabarmati Ashram",
+          "distanceKm": 2.0
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/2850487/pexels-photo-2850487.jpeg",
+      "reviews": [
+        "Beautiful riverfront views.",
+        "Clean and spacious rooms.",
+        "Very polite and attentive staff."
+      ]
+    },
+    {
+      "id": "AH002",
+      "name": "Courtyard by Marriott Ahmedabad",
+      "city": "Ahmedabad",
+      "location": "Satellite",
+      "rating": 4.4,
+      "pricePerNight": 7200,
+      "propertyType": "Premium Hotel",
+      "amenities": [
+        "Free WiFi",
+        "Spa",
+        "Gym",
+        "Restaurant"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Kankaria Lake",
+          "distanceKm": 6.3
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg",
+      "reviews": [
+        "Comfortable rooms with great service.",
+        "Breakfast spread is wide and delicious.",
+        "Good business hotel."
+      ]
+    },
+    {
+      "id": "AH003",
+      "name": "Novotel Ahmedabad",
+      "city": "Ahmedabad",
+      "location": "SG Highway",
+      "rating": 4.2,
+      "pricePerNight": 5800,
+      "propertyType": "Business Hotel",
+      "amenities": [
+        "Pool",
+        "Gym",
+        "Restaurant"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Iskcon Temple",
+          "distanceKm": 2.9
+        }
+      ],
+      "mealPlan": "Room Only",
+      "image": "https://images.pexels.com/photos/537098/pexels-photo-537098.jpeg",
+      "reviews": [
+        "Rooms are clean and comfortable.",
+        "Location is very convenient.",
+        "Good value for money."
+      ]
+    },
+    {
+      "id": "JP001",
+      "name": "Rambagh Palace",
+      "city": "Jaipur",
+      "location": "Bhawani Singh Road",
+      "rating": 4.9,
+      "pricePerNight": 20000,
+      "propertyType": "Palace Hotel",
+      "amenities": [
+        "Garden Suites",
+        "Spa",
+        "Fine Dining"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Hawa Mahal",
+          "distanceKm": 3.6
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg",
+      "reviews": [
+        "Magnificent palace experience.",
+        "Everything feels royal and grand.",
+        "Perfect for honeymoon stays."
+      ]
+    },
+    {
+      "id": "JP002",
+      "name": "Fairmont Jaipur",
+      "city": "Jaipur",
+      "location": "Kukas",
+      "rating": 4.7,
+      "pricePerNight": 13000,
+      "propertyType": "Luxury Resort",
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Restaurant",
+        "Rajputana Decor"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Amber Fort",
+          "distanceKm": 6.8
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/261169/pexels-photo-261169.jpeg",
+      "reviews": [
+        "Amazing food and beautiful views.",
+        "Rooms have traditional Rajasthani feel.",
+        "Staff is very courteous."
+      ]
+    },
+    {
+      "id": "JP003",
+      "name": "Holiday Inn Jaipur City Centre",
+      "city": "Jaipur",
+      "location": "Bais Godam",
+      "rating": 4.3,
+      "pricePerNight": 6000,
+      "propertyType": "Modern Hotel",
+      "amenities": [
+        "Pool",
+        "Gym",
+        "Restaurant"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "City Palace",
+          "distanceKm": 3.3
+        }
+      ],
+      "mealPlan": "Room Only",
+      "image": "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg",
+      "reviews": [
+        "Clean and modern rooms.",
+        "Convenient location for tourists.",
+        "Good breakfast options."
+      ]
+    },
+    {
+      "id": "GO001",
+      "name": "Taj Exotica Resort & Spa",
+      "city": "Goa",
+      "location": "Benaulim",
+      "rating": 4.8,
+      "pricePerNight": 18500,
+      "propertyType": "Beach Resort",
+      "amenities": [
+        "Private Beach",
+        "Pool",
+        "Spa"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Colva Beach",
+          "distanceKm": 3.5
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg",
+      "reviews": [
+        "Fantastic beach access.",
+        "Rooms are luxurious and spacious.",
+        "Perfect place to relax."
+      ]
+    },
+    {
+      "id": "GO002",
+      "name": "W Goa",
+      "city": "Goa",
+      "location": "Vagator Beach",
+      "rating": 4.6,
+      "pricePerNight": 16000,
+      "propertyType": "Luxury Beach Hotel",
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Nightlife"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Chapora Fort",
+          "distanceKm": 1.5
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/537109/pexels-photo-537109.jpeg",
+      "reviews": [
+        "Trendy vibe and great nightlife.",
+        "Rooms are artistically designed.",
+        "Super close to the beach."
+      ]
+    },
+    {
+      "id": "GO003",
+      "name": "Cidade de Goa",
+      "city": "Goa",
+      "location": "Dona Paula",
+      "rating": 4.3,
+      "pricePerNight": 7200,
+      "propertyType": "Beachfront Hotel",
+      "amenities": [
+        "Pool",
+        "Private Beach",
+        "Restaurant"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Miramar Beach",
+          "distanceKm": 2.1
+        }
+      ],
+      "mealPlan": "Room Only",
+      "image": "https://images.pexels.com/photos/261187/pexels-photo-261187.jpeg",
+      "reviews": [
+        "Great beach access and lovely views.",
+        "Comfortable rooms and clean surroundings.",
+        "Perfect for family vacations."
+      ]
+    },
+    {
+      "id": "KC001",
+      "name": "Grand Hyatt Kochi Bolgatty",
+      "city": "Kochi",
+      "location": "Bolgatty Island",
+      "rating": 4.7,
+      "pricePerNight": 11000,
+      "propertyType": "Luxury Waterfront Hotel",
+      "amenities": [
+        "Infinity Pool",
+        "Spa",
+        "Lake View",
+        "Gym"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Marine Drive",
+          "distanceKm": 2.8
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/261187/pexels-photo-261187.jpeg",
+      "reviews": [
+        "Stunning waterfront views and premium rooms.",
+        "Breakfast spread is excellent.",
+        "Perfect for luxury stays and events."
+      ]
+    },
+    {
+      "id": "KC002",
+      "name": "Taj Malabar Resort & Spa",
+      "city": "Kochi",
+      "location": "Willingdon Island",
+      "rating": 4.6,
+      "pricePerNight": 9800,
+      "propertyType": "5-Star Resort",
+      "amenities": [
+        "Spa",
+        "Pool",
+        "Sea View",
+        "Restaurant"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Fort Kochi",
+          "distanceKm": 4.3
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg",
+      "reviews": [
+        "Excellent sea-facing rooms.",
+        "Warm and friendly hospitality.",
+        "Great for both families and couples."
+      ]
+    },
+    {
+      "id": "KC003",
+      "name": "Holiday Inn Cochin",
+      "city": "Kochi",
+      "location": "Vennala",
+      "rating": 4.2,
+      "pricePerNight": 6200,
+      "propertyType": "Business Hotel",
+      "amenities": [
+        "Pool",
+        "Gym",
+        "Free WiFi"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Lulu Mall",
+          "distanceKm": 4.1
+        }
+      ],
+      "mealPlan": "Room Only",
+      "image": "https://images.pexels.com/photos/537109/pexels-photo-537109.jpeg",
+      "reviews": [
+        "Comfortable and clean rooms.",
+        "Good for business travelers.",
+        "Breakfast variety is decent."
+      ]
+    },
+    {
+      "id": "CH001",
+      "name": "The Lalit Chandigarh",
+      "city": "Chandigarh",
+      "location": "Rajiv Gandhi IT Park",
+      "rating": 4.5,
+      "pricePerNight": 9500,
+      "propertyType": "Luxury Hotel",
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Fine Dining"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Sukhna Lake",
+          "distanceKm": 1.8
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/537098/pexels-photo-537098.jpeg",
+      "reviews": [
+        "Quiet location with spacious rooms.",
+        "Amazing hospitality and food.",
+        "Good for luxury business stays."
+      ]
+    },
+    {
+      "id": "CH002",
+      "name": "JW Marriott Chandigarh",
+      "city": "Chandigarh",
+      "location": "Sector 35",
+      "rating": 4.6,
+      "pricePerNight": 11000,
+      "propertyType": "5-Star Hotel",
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Gym"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Sector 17 Market",
+          "distanceKm": 2.0
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/553142/pexels-photo-553142.jpeg",
+      "reviews": [
+        "Location is excellent.",
+        "Rooms are clean and luxurious.",
+        "Food quality is top-notch."
+      ]
+    },
+    {
+      "id": "CH003",
+      "name": "Taj Chandigarh",
+      "city": "Chandigarh",
+      "location": "Sector 17",
+      "rating": 4.3,
+      "pricePerNight": 7800,
+      "propertyType": "Premium Hotel",
+      "amenities": [
+        "Pool",
+        "Bar",
+        "Gym"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Rock Garden",
+          "distanceKm": 1.5
+        }
+      ],
+      "mealPlan": "Room Only",
+      "image": "https://images.pexels.com/photos/6267/hotel-bed-bedroom-room.jpg",
+      "reviews": [
+        "Great central location.",
+        "Comfortable rooms and good service.",
+        "Very close to the main market."
+      ]
+    },
+    {
+      "id": "LK001",
+      "name": "Taj Mahal Lucknow",
+      "city": "Lucknow",
+      "location": "Gomti Nagar",
+      "rating": 4.7,
+      "pricePerNight": 10500,
+      "propertyType": "Luxury Hotel",
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Restaurant"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Ambedkar Park",
+          "distanceKm": 2.4
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/261169/pexels-photo-261169.jpeg",
+      "reviews": [
+        "Amazing hospitality and ambience.",
+        "Rooms are elegant and clean.",
+        "Food is absolutely delicious."
+      ]
+    },
+    {
+      "id": "LK002",
+      "name": "Hyatt Regency Lucknow",
+      "city": "Lucknow",
+      "location": "Vibhuti Khand",
+      "rating": 4.4,
+      "pricePerNight": 8000,
+      "propertyType": "Premium Business Hotel",
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Gym"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Hazratganj",
+          "distanceKm": 6.2
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/261187/pexels-photo-261187.jpeg",
+      "reviews": [
+        "Perfect for business travellers.",
+        "Breakfast buffet is excellent.",
+        "Rooms are comfortable and modern."
+      ]
+    },
+    {
+      "id": "LK003",
+      "name": "Fairfield by Marriott Lucknow",
+      "city": "Lucknow",
+      "location": "Gomti Nagar",
+      "rating": 4.1,
+      "pricePerNight": 5200,
+      "propertyType": "Business Hotel",
+      "amenities": [
+        "Free WiFi",
+        "Restaurant",
+        "Fitness Center"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Rumi Darwaza",
+          "distanceKm": 8.5
+        }
+      ],
+      "mealPlan": "Room Only",
+      "image": "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg",
+      "reviews": [
+        "Good budget-friendly option.",
+        "Rooms are cozy and well-maintained.",
+        "Service is polite and quick."
+      ]
+    },
+    {
+      "id": "IN001",
+      "name": "Radisson Blu Hotel Indore",
+      "city": "Indore",
+      "location": "Ring Road",
+      "rating": 4.5,
+      "pricePerNight": 7500,
+      "propertyType": "Premium Hotel",
+      "amenities": [
+        "Pool",
+        "Spa",
+        "Gym"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Sarafa Bazaar",
+          "distanceKm": 6.0
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/537109/pexels-photo-537109.jpeg",
+      "reviews": [
+        "Rooms are spacious and clean.",
+        "Food quality is great.",
+        "Very friendly staff."
+      ]
+    },
+    {
+      "id": "IN002",
+      "name": "Sayaji Hotel Indore",
+      "city": "Indore",
+      "location": "Vijay Nagar",
+      "rating": 4.4,
+      "pricePerNight": 6800,
+      "propertyType": "Premium Hotel",
+      "amenities": [
+        "Pool",
+        "Restaurant",
+        "Gym"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Khajrana Temple",
+          "distanceKm": 4.1
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/261187/pexels-photo-261187.jpeg",
+      "reviews": [
+        "Excellent hospitality.",
+        "Rooms are very comfortable.",
+        "Great restaurants inside."
+      ]
+    },
+    {
+      "id": "IN003",
+      "name": "Effotel by Sayaji",
+      "city": "Indore",
+      "location": "Vijay Nagar",
+      "rating": 4.1,
+      "pricePerNight": 4500,
+      "propertyType": "Business Hotel",
+      "amenities": [
+        "Free WiFi",
+        "Gym",
+        "Restaurant"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Rajwada Palace",
+          "distanceKm": 7.0
+        }
+      ],
+      "mealPlan": "Room Only",
+      "image": "https://images.pexels.com/photos/537098/pexels-photo-537098.jpeg",
+      "reviews": [
+        "Good for short stays.",
+        "Clean rooms and good service.",
+        "Value for money."
+      ]
+    },
+    {
+      "id": "UD001",
+      "name": "The Oberoi Udaivilas",
+      "city": "Udaipur",
+      "location": "Lake Pichola",
+      "rating": 4.9,
+      "pricePerNight": 26000,
+      "propertyType": "Luxury Lake Resort",
+      "amenities": [
+        "Pool",
+        "Lake View",
+        "Spa",
+        "Fine Dining"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "City Palace",
+          "distanceKm": 3.5
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/271639/pexels-photo-271639.jpeg",
+      "reviews": [
+        "One of the most beautiful hotels in India.",
+        "Royal experience with top-notch service.",
+        "Rooms and views are breathtaking."
+      ]
+    },
+    {
+      "id": "UD002",
+      "name": "Taj Lake Palace",
+      "city": "Udaipur",
+      "location": "Lake Pichola",
+      "rating": 4.8,
+      "pricePerNight": 24000,
+      "propertyType": "Heritage Lake Palace",
+      "amenities": [
+        "Boat Transfer",
+        "Lake View",
+        "Spa"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Jag Mandir",
+          "distanceKm": 1.0
+        }
+      ],
+      "mealPlan": "Breakfast Included",
+      "image": "https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg",
+      "reviews": [
+        "Staying on the lake feels magical.",
+        "Hospitality is unmatched.",
+        "Perfect for luxury vacations."
+      ]
+    },
+    {
+      "id": "UD003",
+      "name": "Trident Udaipur",
+      "city": "Udaipur",
+      "location": "Pichola",
+      "rating": 4.4,
+      "pricePerNight": 8500,
+      "propertyType": "Premium Hotel",
+      "amenities": [
+        "Pool",
+        "Garden",
+        "Restaurant"
+      ],
+      "nearbyAttractions": [
+        {
+          "place": "Fateh Sagar Lake",
+          "distanceKm": 4.0
+        }
+      ],
+      "mealPlan": "Room Only",
+      "image": "https://images.pexels.com/photos/737641/pexels-photo-737641.jpeg",
+      "reviews": [
+        "Great property surrounded by greenery.",
+        "Polite staff and good food.",
+        "Perfect for peaceful stays."
+      ]
+    }
+  ]
+}

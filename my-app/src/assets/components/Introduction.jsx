@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import HamburgerMenu from "./HamburgerMenu";
 import "./Introduction.css";
 
 const Introduction = () => {
@@ -31,27 +31,49 @@ const Introduction = () => {
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
+    // Get form data
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    // Store in localStorage (in production, you'd validate with backend)
+    localStorage.setItem('token', 'dummy_token_' + Date.now());
+    localStorage.setItem('userName', email.split('@')[0]);
+
     console.log("Login submitted");
     closeModal("login");
+    alert("Login successful!");
+    window.location.reload(); // Refresh to update hamburger menu
   };
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
+    // Get form data
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    // Store in localStorage
+    localStorage.setItem('token', 'dummy_token_' + Date.now());
+    localStorage.setItem('userName', name);
+
     console.log("Signup submitted");
     closeModal("signup");
+    alert("Signup successful!");
+    window.location.reload(); // Refresh to update hamburger menu
   };
 
   return (
     <div className="introduction-page">
-      {/* Navbar */}
+      {/* Navbar with Hamburger Menu */}
       <nav className="navbar">
         <div className="logo">Rentara</div>
         <ul className="nav-links">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/services">Services</Link></li>
-          <li><Link to="/train">Train</Link></li>
-          <li><Link to="/flight">Flight</Link></li>
-          <li><Link to="/hotel">Hotel</Link></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/train">Train</a></li>
+          <li><a href="/flight">Flight</a></li>
+          <li><a href="/hotel">Hotel</a></li>
+          <li><a href="/bus">Bus</a></li>
         </ul>
         <div className="auth-buttons">
           <button className="login-btn" onClick={() => openModal("login")}>
@@ -60,16 +82,21 @@ const Introduction = () => {
           <button className="signup-btn" onClick={() => openModal("signup")}>
             Sign Up
           </button>
+          {/* Hamburger Menu Component */}
+          <HamburgerMenu
+            onLoginClick={() => openModal("login")}
+            onSignupClick={() => openModal("signup")}
+          />
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero */}
       <header className="hero">
         <h1 className="logo">Rentara</h1>
         <p className="tagline">Rent Smarter. Live Better.</p>
       </header>
 
-      {/* Introduction Section */}
+      {/* Introduction */}
       <section className="intro">
         <h2>🌟 Welcome to Rentara</h2>
         <p>
@@ -94,17 +121,35 @@ const Introduction = () => {
           <div className="booking-card">
             <h3>🚆 Train Booking</h3>
             <p>Fast and easy train ticket reservations at your fingertips.</p>
-            <Link to="/train"><button>Book Train</button></Link>
+            <button onClick={() => (window.location.href = "/train")}>
+              Book Train
+            </button>
           </div>
           <div className="booking-card">
             <h3>✈️ Flight Booking</h3>
             <p>Find affordable flights and travel across the world with ease.</p>
-            <Link to="/flight"><button>Book Flight</button></Link>
+            <button onClick={() => (window.location.href = "/flight")}>
+              Book Flight
+            </button>
+          </div>
+          <div className="booking-card">
+            <h3>🏨 Hotel Booking</h3>
+            <p>Comfortable stays at the best prices.</p>
+            <button onClick={() => (window.location.href = "/hotel")}>
+              Book Hotel
+            </button>
+          </div>
+          <div className="booking-card">
+            <h3>🚌 Bus Booking</h3>
+            <p>Comfortable and reliable bus travel for short and long routes.</p>
+            <button onClick={() => (window.location.href = "/bus")}>
+              Book Bus
+            </button>
           </div>
         </div>
       </section>
 
-      {/* Image Section */}
+      {/* Image */}
       <section className="image-block">
         <img src="/rentara.png" alt="Rentara Concept" className="intro-img" />
       </section>
@@ -124,11 +169,13 @@ const Introduction = () => {
       {showLoginModal && (
         <div className="modal" onClick={() => closeModal("login")}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <span className="close" onClick={() => closeModal("login")}>&times;</span>
+            <span className="close" onClick={() => closeModal("login")}>
+              &times;
+            </span>
             <h2>Login</h2>
             <form onSubmit={handleLoginSubmit}>
-              <input type="email" placeholder="Email" required />
-              <input type="password" placeholder="Password" required />
+              <input type="email" name="email" placeholder="Email" required />
+              <input type="password" name="password" placeholder="Password" required />
               <button type="submit">Login</button>
             </form>
             <div className="extra">
@@ -143,12 +190,14 @@ const Introduction = () => {
       {showSignupModal && (
         <div className="modal" onClick={() => closeModal("signup")}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <span className="close" onClick={() => closeModal("signup")}>&times;</span>
+            <span className="close" onClick={() => closeModal("signup")}>
+              &times;
+            </span>
             <h2>Sign Up</h2>
             <form onSubmit={handleSignupSubmit}>
-              <input type="text" placeholder="Full Name" required />
-              <input type="email" placeholder="Email" required />
-              <input type="password" placeholder="Password" required />
+              <input type="text" name="name" placeholder="Full Name" required />
+              <input type="email" name="email" placeholder="Email" required />
+              <input type="password" name="password" placeholder="Password" required />
               <button type="submit">Sign Up</button>
             </form>
             <div className="extra">

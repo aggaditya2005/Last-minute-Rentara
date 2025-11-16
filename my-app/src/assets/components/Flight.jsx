@@ -270,6 +270,10 @@ const Flight = () => {
           <li><Link to="/flight" className="active">Flight</Link></li>
           <li><Link to="/flightSearch">Best Prices</Link></li>
           <li><Link to="/hotel">Hotel</Link></li>
+          <li><Link to="/create">Create</Link></li>
+          <li><Link to="/aIChatBot">Chatbot</Link></li>
+          <li><Link to="/hotelRecommend">Hotel Plan</Link></li>
+
         </ul>
       </nav>
 

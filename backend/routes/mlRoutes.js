@@ -6,8 +6,9 @@ const router = express.Router();
 const __dirname = path.resolve();
 
 // POST /api/ai/predict - Endpoint for flight price prediction
+// NOW ACCEPTS AN OPTIONAL 'target_price' for comparison/debugging
 router.post("/predict", (req, res) => {
-  const { airline, source, destination, departure_time, stops, class: seatClass } = req.body;
+  const { airline, source, destination, departure_time, stops, class: seatClass, target_price } = req.body;
 
   // Check for missing parameters (CRITICAL: Must match the Python script's expected inputs)
   if (!airline || !source || !destination || !departure_time || !stops || !seatClass) {
@@ -18,9 +19,9 @@ router.post("/predict", (req, res) => {
   }
 
   // Path to your Python prediction script
-  const pythonScriptPath = path.join(__dirname, "backend", "ml", "predict_flight_price.py");
+  const pythonScriptPath = path.join(__dirname, "ml", "predict_flight_price.py");
 
-  // Arguments to pass to Python
+  // Arguments to pass to Python (Note: target_price is optional and passed as the 7th data arg)
   const args = [
     pythonScriptPath,
     airline,
@@ -28,7 +29,8 @@ router.post("/predict", (req, res) => {
     destination,
     departure_time,
     stops,
-    seatClass
+    seatClass,
+    target_price || "" // Pass an empty string if target_price is missing/null
   ];
 
   // Try starting the Python process
@@ -50,7 +52,7 @@ router.post("/predict", (req, res) => {
     });
   });
 
-  // Capture standard output from Python (where the prediction number is printed)
+  // Capture standard output from Python (now expecting a JSON string)
   python.stdout.on("data", (data) => {
     predictionData += data.toString();
   });
@@ -65,19 +67,32 @@ router.post("/predict", (req, res) => {
   // Handle process exit
   python.on("close", (code) => {
     if (code === 0) {
-      // Success: return the captured prediction data
-      const price = parseFloat(predictionData.trim());
-      if (isNaN(price)) {
+      // NEW LOGIC: Attempt to parse JSON output from Python
+      try {
+        const output = JSON.parse(predictionData.trim());
+
+        // Ensure the predicted price is present
+        if (typeof output.predicted_price !== 'number' || isNaN(output.predicted_price)) {
+          return res.status(500).json({
+            success: false,
+            message: "Prediction succeeded but returned invalid/missing data.",
+            error_details: `Raw Output: ${predictionData}`
+          });
+        }
+
+        // Success: return the JSON object
+        res.json({
+          success: true,
+          ...output // Includes predicted_price and optional target_price
+        });
+      } catch (e) {
+        // Handle JSON parsing error
         return res.status(500).json({
           success: false,
-          message: "Prediction succeeded but returned invalid data.",
-          error_details: `Raw Output: ${predictionData}`
+          message: "Failed to parse Python output as JSON.",
+          error_details: `Parsing Error: ${e.message}. Raw Output: ${predictionData}`
         });
       }
-      res.json({
-        success: true,
-        predicted_price: price
-      });
     } else {
       // Failure: return the error captured from stderr or general process crash
       res.status(500).json({

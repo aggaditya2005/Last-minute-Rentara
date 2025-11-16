@@ -4,6 +4,7 @@ import path from "path";
 import dotenv from "dotenv";
 import Flight from "../models/Flight.js";
 
+console.log("***************")
 dotenv.config({ path: "./backend/.env" });
 
 // ✅ Dynamically resolve the project root

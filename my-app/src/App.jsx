@@ -7,6 +7,9 @@ import Train from "./assets/components/Train";
 import Flight from "./assets/components/Flight"; // Original Listing Page
 import Hotel from "./assets/components/Hotel";
 import FlightSearch from "./assets/components/FlightSearch"; // AI Predictor Component
+import Create from "./assets/components/Create";
+import AIChatBot from './assets/components/AIChatBot';
+import HotelRecommend from "./assets/components/HotelRecommend";
 
 import "./assets/components/App.css";
 
@@ -32,6 +35,10 @@ function App() {
         <Route path="/flightSearch" element={<FlightSearch />} />
 
         <Route path="/hotel" element={<Hotel />} />
+        <Route path="/create" element={<Create />} />
+        <Route path="/aIChatBot" element={<AIChatBot />} />
+        <Route path="/hotelRecommend" element={<HotelRecommend />} />
+
       </Routes>
     </Router>
   );

@@ -20,11 +20,11 @@ const FlightSearch = () => {
 
   // List of values based on the dataset's features (for dropdowns)
   const options = {
-    airline: ['Air Asia', 'Air India', 'Go First', 'IndiGo', 'SpiceJet', 'Vistara'],
-    source: ['Delhi', 'Mumbai', 'Bangalore', 'Kolkata', 'Chennai', 'Hyderabad'],
-    destination: ['Mumbai', 'Delhi', 'Bangalore', 'Kolkata', 'Chennai', 'Hyderabad'],
-    departure_time: ['Morning', 'Evening', 'Night', 'Early_Morning', 'Afternoon', 'Late_Night'],
-    stops: ['zero', 'one', 'two_or_more'],
+    airline: ['Air Asia', 'Air India', 'Go First', 'IndiGo', 'SpiceJet', 'Vistara', 'Qatar Airways', 'Emirates', 'Singapore Airlines'],
+    source: ['Delhi', 'Mumbai', 'Bangalore', 'Kolkata', 'Chennai', 'Hyderabad', 'Pune', 'Ahmedabad', 'Jaipur', 'Goa', 'Kochi', 'Chandigarh', 'Lucknow', 'Indore', 'Bhopal'],
+    destination: ['Delhi', 'Mumbai', 'Bangalore', 'Kolkata', 'Chennai', 'Hyderabad', 'Pune', 'Ahmedabad', 'Jaipur', 'Goa', 'Kochi', 'Chandigarh', 'Lucknow', 'Indore', 'Bhopal'],
+    departure_time: ['Early Morning', 'Morning', 'Afternoon', 'Evening', 'Night', 'Late Night'],
+    stops: ['zero', 'one', 'two or more'],
     class: ['Economy', 'Business'],
   };
 
@@ -40,6 +40,7 @@ const FlightSearch = () => {
     setError(null);
 
     try {
+
       const response = await fetch('http://localhost:5000/api/ai/predict', {
         method: 'POST',
         headers: {
@@ -49,7 +50,7 @@ const FlightSearch = () => {
       });
 
       const data = await response.json();
-
+      console.log("*****************GOT**************" + data);
       if (!response.ok || !data.success) {
         // Handle API errors
         throw new Error(data.message || data.error_details || "Failed to get prediction from AI model.");
@@ -58,7 +59,7 @@ const FlightSearch = () => {
       setPredictedPrice(data.predicted_price);
 
     } catch (err) {
-      console.error("Prediction Error:", err);
+      console.info(err);
       setError("Prediction failed. Ensure your backend and Python ML environment are running.");
 
     } finally {
@@ -99,7 +100,7 @@ const FlightSearch = () => {
       <div className="ai-predictor-container">
         <div className="predictor-card">
           <h1 className="predictor-title">
-            <span className="ai-icon">🧠</span> AI Price Prediction
+            <span className="ai-icon">🧠</span> Flight Price Prediction
           </h1>
           <p className="predictor-subtitle">
             Get an estimated fare based on historical data analysis.
@@ -118,7 +119,7 @@ const FlightSearch = () => {
               className="predict-btn"
               disabled={isLoading}
             >
-              {isLoading ? 'Calculating Price...' : 'Predict AI Price'}
+              {isLoading ? 'Calculating Price...' : 'Predict Price'}
             </button>
           </form>
 

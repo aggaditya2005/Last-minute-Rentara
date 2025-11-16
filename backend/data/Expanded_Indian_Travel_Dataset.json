@@ -1,0 +1,1102 @@
+[
+  {
+    "Destination Name":"Taj Mahal",
+    "State":"Uttar Pradesh",
+    "Region":"North",
+    "Category":"Heritage",
+    "Popular Attraction":"Taj Mahal",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Agra Civil Enclave",
+    "Nearest Railway Station":"Agra Cantt"
+  },
+  {
+    "Destination Name":"Jaipur",
+    "State":"Rajasthan",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"Amber Fort",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Jaipur International",
+    "Nearest Railway Station":"Jaipur Junction"
+  },
+  {
+    "Destination Name":"Goa",
+    "State":"Goa",
+    "Region":"West",
+    "Category":"Beach",
+    "Popular Attraction":"Calangute Beach",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Dabolim Airport",
+    "Nearest Railway Station":"Madgaon Railway Station"
+  },
+  {
+    "Destination Name":"Kerala Backwaters",
+    "State":"Kerala",
+    "Region":"South",
+    "Category":"Nature",
+    "Popular Attraction":"Vembanad Lake",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Cochin International",
+    "Nearest Railway Station":"Alleppey"
+  },
+  {
+    "Destination Name":"Varanasi",
+    "State":"Uttar Pradesh",
+    "Region":"North",
+    "Category":"Religious",
+    "Popular Attraction":"Ghats of Varanasi",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Lal Bahadur Shastri",
+    "Nearest Railway Station":"Varanasi Junction"
+  },
+  {
+    "Destination Name":"Manali",
+    "State":"Himachal Pradesh",
+    "Region":"North",
+    "Category":"Adventure",
+    "Popular Attraction":"Solang Valley",
+    "Accessibility":"Difficult",
+    "Nearest Airport":"Bhuntar Airport",
+    "Nearest Railway Station":"Joginder Nagar"
+  },
+  {
+    "Destination Name":"Sundarbans",
+    "State":"West Bengal",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Sundarbans National Park",
+    "Accessibility":"Difficult",
+    "Nearest Airport":"Netaji Subhas Chandra Bose",
+    "Nearest Railway Station":"Canning"
+  },
+  {
+    "Destination Name":"Amritsar",
+    "State":"Punjab",
+    "Region":"North",
+    "Category":"Religious",
+    "Popular Attraction":"Golden Temple",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Sri Guru Ram Dass Jee",
+    "Nearest Railway Station":"Amritsar Junction"
+  },
+  {
+    "Destination Name":"Mahabalipuram",
+    "State":"Tamil Nadu",
+    "Region":"South",
+    "Category":"Heritage",
+    "Popular Attraction":"Shore Temple",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Chennai International",
+    "Nearest Railway Station":"Chengalpattu"
+  },
+  {
+    "Destination Name":"Andaman Islands",
+    "State":"Andaman and Nicobar",
+    "Region":"East",
+    "Category":"Beach",
+    "Popular Attraction":"Radhanagar Beach",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Veer Savarkar International",
+    "Nearest Railway Station":"Port Blair"
+  },
+  {
+    "Destination Name":"Kaziranga National Park",
+    "State":"Assam",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Kaziranga National Park",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Jorhat Airport",
+    "Nearest Railway Station":"Furkating"
+  },
+  {
+    "Destination Name":"Mysore",
+    "State":"Karnataka",
+    "Region":"South",
+    "Category":"Heritage",
+    "Popular Attraction":"Mysore Palace",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Mysore Airport",
+    "Nearest Railway Station":"Mysore"
+  },
+  {
+    "Destination Name":"Jaisalmer",
+    "State":"Rajasthan",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"Jaisalmer Fort",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Jaisalmer Airport",
+    "Nearest Railway Station":"Jaisalmer"
+  },
+  {
+    "Destination Name":"Rishikesh",
+    "State":"Uttarakhand",
+    "Region":"North",
+    "Category":"Adventure",
+    "Popular Attraction":"Lakshman Jhula",
+    "Accessibility":"Difficult",
+    "Nearest Airport":"Dehradun Airport",
+    "Nearest Railway Station":"Rishikesh"
+  },
+  {
+    "Destination Name":"Shimla",
+    "State":"Himachal Pradesh",
+    "Region":"North",
+    "Category":"Nature",
+    "Popular Attraction":"Mall Road",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Shimla Airport",
+    "Nearest Railway Station":"Shimla"
+  },
+  {
+    "Destination Name":"Udaipur",
+    "State":"Rajasthan",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"City Palace",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Udaipur Airport",
+    "Nearest Railway Station":"Udaipur City"
+  },
+  {
+    "Destination Name":"Darjeeling",
+    "State":"West Bengal",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Tiger Hill",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Bagdogra Airport",
+    "Nearest Railway Station":"Darjeeling"
+  },
+  {
+    "Destination Name":"Munnar",
+    "State":"Kerala",
+    "Region":"South",
+    "Category":"Nature",
+    "Popular Attraction":"Tea Gardens",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Cochin International",
+    "Nearest Railway Station":"Ernakulam"
+  },
+  {
+    "Destination Name":"Ajanta and Ellora Caves",
+    "State":"Maharashtra",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"Ajanta Caves",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Aurangabad Airport",
+    "Nearest Railway Station":"Aurangabad"
+  },
+  {
+    "Destination Name":"Cherrapunji",
+    "State":"Meghalaya",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Nohkalikai Falls",
+    "Accessibility":"Difficult",
+    "Nearest Airport":"Shillong Airport",
+    "Nearest Railway Station":"Guwahati"
+  },
+  {
+    "Destination Name":"Kaziranga National Park",
+    "State":"Assam",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Kaziranga National Park",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Jorhat Airport",
+    "Nearest Railway Station":"Furkating"
+  },
+  {
+    "Destination Name":"Mysore",
+    "State":"Karnataka",
+    "Region":"South",
+    "Category":"Heritage",
+    "Popular Attraction":"Mysore Palace",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Mysore Airport",
+    "Nearest Railway Station":"Mysore"
+  },
+  {
+    "Destination Name":"Jaisalmer",
+    "State":"Rajasthan",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"Jaisalmer Fort",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Jaisalmer Airport",
+    "Nearest Railway Station":"Jaisalmer"
+  },
+  {
+    "Destination Name":"Rishikesh",
+    "State":"Uttarakhand",
+    "Region":"North",
+    "Category":"Adventure",
+    "Popular Attraction":"Lakshman Jhula",
+    "Accessibility":"Difficult",
+    "Nearest Airport":"Dehradun Airport",
+    "Nearest Railway Station":"Rishikesh"
+  },
+  {
+    "Destination Name":"Shimla",
+    "State":"Himachal Pradesh",
+    "Region":"North",
+    "Category":"Nature",
+    "Popular Attraction":"Mall Road",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Shimla Airport",
+    "Nearest Railway Station":"Shimla"
+  },
+  {
+    "Destination Name":"Udaipur",
+    "State":"Rajasthan",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"City Palace",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Udaipur Airport",
+    "Nearest Railway Station":"Udaipur City"
+  },
+  {
+    "Destination Name":"Darjeeling",
+    "State":"West Bengal",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Tiger Hill",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Bagdogra Airport",
+    "Nearest Railway Station":"Darjeeling"
+  },
+  {
+    "Destination Name":"Munnar",
+    "State":"Kerala",
+    "Region":"South",
+    "Category":"Nature",
+    "Popular Attraction":"Tea Gardens",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Cochin International",
+    "Nearest Railway Station":"Ernakulam"
+  },
+  {
+    "Destination Name":"Ajanta and Ellora Caves",
+    "State":"Maharashtra",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"Ajanta Caves",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Aurangabad Airport",
+    "Nearest Railway Station":"Aurangabad"
+  },
+  {
+    "Destination Name":"Cherrapunji",
+    "State":"Meghalaya",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Nohkalikai Falls",
+    "Accessibility":"Difficult",
+    "Nearest Airport":"Shillong Airport",
+    "Nearest Railway Station":"Guwahati"
+  },
+  {
+    "Destination Name":"Kaziranga National Park",
+    "State":"Assam",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Kaziranga National Park",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Jorhat Airport",
+    "Nearest Railway Station":"Furkating"
+  },
+  {
+    "Destination Name":"Mysore",
+    "State":"Karnataka",
+    "Region":"South",
+    "Category":"Heritage",
+    "Popular Attraction":"Mysore Palace",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Mysore Airport",
+    "Nearest Railway Station":"Mysore"
+  },
+  {
+    "Destination Name":"Jaisalmer",
+    "State":"Rajasthan",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"Jaisalmer Fort",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Jaisalmer Airport",
+    "Nearest Railway Station":"Jaisalmer"
+  },
+  {
+    "Destination Name":"Rishikesh",
+    "State":"Uttarakhand",
+    "Region":"North",
+    "Category":"Adventure",
+    "Popular Attraction":"Lakshman Jhula",
+    "Accessibility":"Difficult",
+    "Nearest Airport":"Dehradun Airport",
+    "Nearest Railway Station":"Rishikesh"
+  },
+  {
+    "Destination Name":"Shimla",
+    "State":"Himachal Pradesh",
+    "Region":"North",
+    "Category":"Nature",
+    "Popular Attraction":"Mall Road",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Shimla Airport",
+    "Nearest Railway Station":"Shimla"
+  },
+  {
+    "Destination Name":"Udaipur",
+    "State":"Rajasthan",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"City Palace",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Udaipur Airport",
+    "Nearest Railway Station":"Udaipur City"
+  },
+  {
+    "Destination Name":"Darjeeling",
+    "State":"West Bengal",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Tiger Hill",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Bagdogra Airport",
+    "Nearest Railway Station":"Darjeeling"
+  },
+  {
+    "Destination Name":"Munnar",
+    "State":"Kerala",
+    "Region":"South",
+    "Category":"Nature",
+    "Popular Attraction":"Tea Gardens",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Cochin International",
+    "Nearest Railway Station":"Ernakulam"
+  },
+  {
+    "Destination Name":"Ajanta and Ellora Caves",
+    "State":"Maharashtra",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"Ajanta Caves",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Aurangabad Airport",
+    "Nearest Railway Station":"Aurangabad"
+  },
+  {
+    "Destination Name":"Cherrapunji",
+    "State":"Meghalaya",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Nohkalikai Falls",
+    "Accessibility":"Difficult",
+    "Nearest Airport":"Shillong Airport",
+    "Nearest Railway Station":"Guwahati"
+  },
+  {
+    "Destination Name":"Kaziranga National Park",
+    "State":"Assam",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Kaziranga National Park",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Jorhat Airport",
+    "Nearest Railway Station":"Furkating"
+  },
+  {
+    "Destination Name":"Mysore",
+    "State":"Karnataka",
+    "Region":"South",
+    "Category":"Heritage",
+    "Popular Attraction":"Mysore Palace",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Mysore Airport",
+    "Nearest Railway Station":"Mysore"
+  },
+  {
+    "Destination Name":"Jaisalmer",
+    "State":"Rajasthan",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"Jaisalmer Fort",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Jaisalmer Airport",
+    "Nearest Railway Station":"Jaisalmer"
+  },
+  {
+    "Destination Name":"Rishikesh",
+    "State":"Uttarakhand",
+    "Region":"North",
+    "Category":"Adventure",
+    "Popular Attraction":"Lakshman Jhula",
+    "Accessibility":"Difficult",
+    "Nearest Airport":"Dehradun Airport",
+    "Nearest Railway Station":"Rishikesh"
+  },
+  {
+    "Destination Name":"Shimla",
+    "State":"Himachal Pradesh",
+    "Region":"North",
+    "Category":"Nature",
+    "Popular Attraction":"Mall Road",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Shimla Airport",
+    "Nearest Railway Station":"Shimla"
+  },
+  {
+    "Destination Name":"Udaipur",
+    "State":"Rajasthan",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"City Palace",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Udaipur Airport",
+    "Nearest Railway Station":"Udaipur City"
+  },
+  {
+    "Destination Name":"Darjeeling",
+    "State":"West Bengal",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Tiger Hill",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Bagdogra Airport",
+    "Nearest Railway Station":"Darjeeling"
+  },
+  {
+    "Destination Name":"Munnar",
+    "State":"Kerala",
+    "Region":"South",
+    "Category":"Nature",
+    "Popular Attraction":"Tea Gardens",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Cochin International",
+    "Nearest Railway Station":"Ernakulam"
+  },
+  {
+    "Destination Name":"Ajanta and Ellora Caves",
+    "State":"Maharashtra",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"Ajanta Caves",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Aurangabad Airport",
+    "Nearest Railway Station":"Aurangabad"
+  },
+  {
+    "Destination Name":"Cherrapunji",
+    "State":"Meghalaya",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Nohkalikai Falls",
+    "Accessibility":"Difficult",
+    "Nearest Airport":"Shillong Airport",
+    "Nearest Railway Station":"Guwahati"
+  },
+  {
+    "Destination Name":"Kaziranga National Park",
+    "State":"Assam",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Kaziranga National Park",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Jorhat Airport",
+    "Nearest Railway Station":"Furkating"
+  },
+  {
+    "Destination Name":"Mysore",
+    "State":"Karnataka",
+    "Region":"South",
+    "Category":"Heritage",
+    "Popular Attraction":"Mysore Palace",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Mysore Airport",
+    "Nearest Railway Station":"Mysore"
+  },
+  {
+    "Destination Name":"Jaisalmer",
+    "State":"Rajasthan",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"Jaisalmer Fort",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Jaisalmer Airport",
+    "Nearest Railway Station":"Jaisalmer"
+  },
+  {
+    "Destination Name":"Rishikesh",
+    "State":"Uttarakhand",
+    "Region":"North",
+    "Category":"Adventure",
+    "Popular Attraction":"Lakshman Jhula",
+    "Accessibility":"Difficult",
+    "Nearest Airport":"Dehradun Airport",
+    "Nearest Railway Station":"Rishikesh"
+  },
+  {
+    "Destination Name":"Shimla",
+    "State":"Himachal Pradesh",
+    "Region":"North",
+    "Category":"Nature",
+    "Popular Attraction":"Mall Road",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Shimla Airport",
+    "Nearest Railway Station":"Shimla"
+  },
+  {
+    "Destination Name":"Udaipur",
+    "State":"Rajasthan",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"City Palace",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Udaipur Airport",
+    "Nearest Railway Station":"Udaipur City"
+  },
+  {
+    "Destination Name":"Darjeeling",
+    "State":"West Bengal",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Tiger Hill",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Bagdogra Airport",
+    "Nearest Railway Station":"Darjeeling"
+  },
+  {
+    "Destination Name":"Munnar",
+    "State":"Kerala",
+    "Region":"South",
+    "Category":"Nature",
+    "Popular Attraction":"Tea Gardens",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Cochin International",
+    "Nearest Railway Station":"Ernakulam"
+  },
+  {
+    "Destination Name":"Ajanta and Ellora Caves",
+    "State":"Maharashtra",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"Ajanta Caves",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Aurangabad Airport",
+    "Nearest Railway Station":"Aurangabad"
+  },
+  {
+    "Destination Name":"Cherrapunji",
+    "State":"Meghalaya",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Nohkalikai Falls",
+    "Accessibility":"Difficult",
+    "Nearest Airport":"Shillong Airport",
+    "Nearest Railway Station":"Guwahati"
+  },
+  {
+    "Destination Name":"Kaziranga National Park",
+    "State":"Assam",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Kaziranga National Park",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Jorhat Airport",
+    "Nearest Railway Station":"Furkating"
+  },
+  {
+    "Destination Name":"Mysore",
+    "State":"Karnataka",
+    "Region":"South",
+    "Category":"Heritage",
+    "Popular Attraction":"Mysore Palace",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Mysore Airport",
+    "Nearest Railway Station":"Mysore"
+  },
+  {
+    "Destination Name":"Jaisalmer",
+    "State":"Rajasthan",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"Jaisalmer Fort",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Jaisalmer Airport",
+    "Nearest Railway Station":"Jaisalmer"
+  },
+  {
+    "Destination Name":"Rishikesh",
+    "State":"Uttarakhand",
+    "Region":"North",
+    "Category":"Adventure",
+    "Popular Attraction":"Lakshman Jhula",
+    "Accessibility":"Difficult",
+    "Nearest Airport":"Dehradun Airport",
+    "Nearest Railway Station":"Rishikesh"
+  },
+  {
+    "Destination Name":"Shimla",
+    "State":"Himachal Pradesh",
+    "Region":"North",
+    "Category":"Nature",
+    "Popular Attraction":"Mall Road",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Shimla Airport",
+    "Nearest Railway Station":"Shimla"
+  },
+  {
+    "Destination Name":"Udaipur",
+    "State":"Rajasthan",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"City Palace",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Udaipur Airport",
+    "Nearest Railway Station":"Udaipur City"
+  },
+  {
+    "Destination Name":"Darjeeling",
+    "State":"West Bengal",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Tiger Hill",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Bagdogra Airport",
+    "Nearest Railway Station":"Darjeeling"
+  },
+  {
+    "Destination Name":"Munnar",
+    "State":"Kerala",
+    "Region":"South",
+    "Category":"Nature",
+    "Popular Attraction":"Tea Gardens",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Cochin International",
+    "Nearest Railway Station":"Ernakulam"
+  },
+  {
+    "Destination Name":"Ajanta and Ellora Caves",
+    "State":"Maharashtra",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"Ajanta Caves",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Aurangabad Airport",
+    "Nearest Railway Station":"Aurangabad"
+  },
+  {
+    "Destination Name":"Cherrapunji",
+    "State":"Meghalaya",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Nohkalikai Falls",
+    "Accessibility":"Difficult",
+    "Nearest Airport":"Shillong Airport",
+    "Nearest Railway Station":"Guwahati"
+  },
+  {
+    "Destination Name":"Kaziranga National Park",
+    "State":"Assam",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Kaziranga National Park",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Jorhat Airport",
+    "Nearest Railway Station":"Furkating"
+  },
+  {
+    "Destination Name":"Mysore",
+    "State":"Karnataka",
+    "Region":"South",
+    "Category":"Heritage",
+    "Popular Attraction":"Mysore Palace",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Mysore Airport",
+    "Nearest Railway Station":"Mysore"
+  },
+  {
+    "Destination Name":"Jaisalmer",
+    "State":"Rajasthan",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"Jaisalmer Fort",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Jaisalmer Airport",
+    "Nearest Railway Station":"Jaisalmer"
+  },
+  {
+    "Destination Name":"Rishikesh",
+    "State":"Uttarakhand",
+    "Region":"North",
+    "Category":"Adventure",
+    "Popular Attraction":"Lakshman Jhula",
+    "Accessibility":"Difficult",
+    "Nearest Airport":"Dehradun Airport",
+    "Nearest Railway Station":"Rishikesh"
+  },
+  {
+    "Destination Name":"Shimla",
+    "State":"Himachal Pradesh",
+    "Region":"North",
+    "Category":"Nature",
+    "Popular Attraction":"Mall Road",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Shimla Airport",
+    "Nearest Railway Station":"Shimla"
+  },
+  {
+    "Destination Name":"Udaipur",
+    "State":"Rajasthan",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"City Palace",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Udaipur Airport",
+    "Nearest Railway Station":"Udaipur City"
+  },
+  {
+    "Destination Name":"Darjeeling",
+    "State":"West Bengal",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Tiger Hill",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Bagdogra Airport",
+    "Nearest Railway Station":"Darjeeling"
+  },
+  {
+    "Destination Name":"Munnar",
+    "State":"Kerala",
+    "Region":"South",
+    "Category":"Nature",
+    "Popular Attraction":"Tea Gardens",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Cochin International",
+    "Nearest Railway Station":"Ernakulam"
+  },
+  {
+    "Destination Name":"Ajanta and Ellora Caves",
+    "State":"Maharashtra",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"Ajanta Caves",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Aurangabad Airport",
+    "Nearest Railway Station":"Aurangabad"
+  },
+  {
+    "Destination Name":"Cherrapunji",
+    "State":"Meghalaya",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Nohkalikai Falls",
+    "Accessibility":"Difficult",
+    "Nearest Airport":"Shillong Airport",
+    "Nearest Railway Station":"Guwahati"
+  },
+  {
+    "Destination Name":"Kaziranga National Park",
+    "State":"Assam",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Kaziranga National Park",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Jorhat Airport",
+    "Nearest Railway Station":"Furkating"
+  },
+  {
+    "Destination Name":"Mysore",
+    "State":"Karnataka",
+    "Region":"South",
+    "Category":"Heritage",
+    "Popular Attraction":"Mysore Palace",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Mysore Airport",
+    "Nearest Railway Station":"Mysore"
+  },
+  {
+    "Destination Name":"Jaisalmer",
+    "State":"Rajasthan",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"Jaisalmer Fort",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Jaisalmer Airport",
+    "Nearest Railway Station":"Jaisalmer"
+  },
+  {
+    "Destination Name":"Rishikesh",
+    "State":"Uttarakhand",
+    "Region":"North",
+    "Category":"Adventure",
+    "Popular Attraction":"Lakshman Jhula",
+    "Accessibility":"Difficult",
+    "Nearest Airport":"Dehradun Airport",
+    "Nearest Railway Station":"Rishikesh"
+  },
+  {
+    "Destination Name":"Shimla",
+    "State":"Himachal Pradesh",
+    "Region":"North",
+    "Category":"Nature",
+    "Popular Attraction":"Mall Road",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Shimla Airport",
+    "Nearest Railway Station":"Shimla"
+  },
+  {
+    "Destination Name":"Udaipur",
+    "State":"Rajasthan",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"City Palace",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Udaipur Airport",
+    "Nearest Railway Station":"Udaipur City"
+  },
+  {
+    "Destination Name":"Darjeeling",
+    "State":"West Bengal",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Tiger Hill",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Bagdogra Airport",
+    "Nearest Railway Station":"Darjeeling"
+  },
+  {
+    "Destination Name":"Munnar",
+    "State":"Kerala",
+    "Region":"South",
+    "Category":"Nature",
+    "Popular Attraction":"Tea Gardens",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Cochin International",
+    "Nearest Railway Station":"Ernakulam"
+  },
+  {
+    "Destination Name":"Ajanta and Ellora Caves",
+    "State":"Maharashtra",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"Ajanta Caves",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Aurangabad Airport",
+    "Nearest Railway Station":"Aurangabad"
+  },
+  {
+    "Destination Name":"Cherrapunji",
+    "State":"Meghalaya",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Nohkalikai Falls",
+    "Accessibility":"Difficult",
+    "Nearest Airport":"Shillong Airport",
+    "Nearest Railway Station":"Guwahati"
+  },
+  {
+    "Destination Name":"Kaziranga National Park",
+    "State":"Assam",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Kaziranga National Park",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Jorhat Airport",
+    "Nearest Railway Station":"Furkating"
+  },
+  {
+    "Destination Name":"Mysore",
+    "State":"Karnataka",
+    "Region":"South",
+    "Category":"Heritage",
+    "Popular Attraction":"Mysore Palace",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Mysore Airport",
+    "Nearest Railway Station":"Mysore"
+  },
+  {
+    "Destination Name":"Jaisalmer",
+    "State":"Rajasthan",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"Jaisalmer Fort",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Jaisalmer Airport",
+    "Nearest Railway Station":"Jaisalmer"
+  },
+  {
+    "Destination Name":"Rishikesh",
+    "State":"Uttarakhand",
+    "Region":"North",
+    "Category":"Adventure",
+    "Popular Attraction":"Lakshman Jhula",
+    "Accessibility":"Difficult",
+    "Nearest Airport":"Dehradun Airport",
+    "Nearest Railway Station":"Rishikesh"
+  },
+  {
+    "Destination Name":"Shimla",
+    "State":"Himachal Pradesh",
+    "Region":"North",
+    "Category":"Nature",
+    "Popular Attraction":"Mall Road",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Shimla Airport",
+    "Nearest Railway Station":"Shimla"
+  },
+  {
+    "Destination Name":"Udaipur",
+    "State":"Rajasthan",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"City Palace",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Udaipur Airport",
+    "Nearest Railway Station":"Udaipur City"
+  },
+  {
+    "Destination Name":"Darjeeling",
+    "State":"West Bengal",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Tiger Hill",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Bagdogra Airport",
+    "Nearest Railway Station":"Darjeeling"
+  },
+  {
+    "Destination Name":"Munnar",
+    "State":"Kerala",
+    "Region":"South",
+    "Category":"Nature",
+    "Popular Attraction":"Tea Gardens",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Cochin International",
+    "Nearest Railway Station":"Ernakulam"
+  },
+  {
+    "Destination Name":"Ajanta and Ellora Caves",
+    "State":"Maharashtra",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"Ajanta Caves",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Aurangabad Airport",
+    "Nearest Railway Station":"Aurangabad"
+  },
+  {
+    "Destination Name":"Cherrapunji",
+    "State":"Meghalaya",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Nohkalikai Falls",
+    "Accessibility":"Difficult",
+    "Nearest Airport":"Shillong Airport",
+    "Nearest Railway Station":"Guwahati"
+  },
+  {
+    "Destination Name":"Kaziranga National Park",
+    "State":"Assam",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Kaziranga National Park",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Jorhat Airport",
+    "Nearest Railway Station":"Furkating"
+  },
+  {
+    "Destination Name":"Mysore",
+    "State":"Karnataka",
+    "Region":"South",
+    "Category":"Heritage",
+    "Popular Attraction":"Mysore Palace",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Mysore Airport",
+    "Nearest Railway Station":"Mysore"
+  },
+  {
+    "Destination Name":"Jaisalmer",
+    "State":"Rajasthan",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"Jaisalmer Fort",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Jaisalmer Airport",
+    "Nearest Railway Station":"Jaisalmer"
+  },
+  {
+    "Destination Name":"Rishikesh",
+    "State":"Uttarakhand",
+    "Region":"North",
+    "Category":"Adventure",
+    "Popular Attraction":"Lakshman Jhula",
+    "Accessibility":"Difficult",
+    "Nearest Airport":"Dehradun Airport",
+    "Nearest Railway Station":"Rishikesh"
+  },
+  {
+    "Destination Name":"Shimla",
+    "State":"Himachal Pradesh",
+    "Region":"North",
+    "Category":"Nature",
+    "Popular Attraction":"Mall Road",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Shimla Airport",
+    "Nearest Railway Station":"Shimla"
+  },
+  {
+    "Destination Name":"Udaipur",
+    "State":"Rajasthan",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"City Palace",
+    "Accessibility":"Easy",
+    "Nearest Airport":"Udaipur Airport",
+    "Nearest Railway Station":"Udaipur City"
+  },
+  {
+    "Destination Name":"Darjeeling",
+    "State":"West Bengal",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Tiger Hill",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Bagdogra Airport",
+    "Nearest Railway Station":"Darjeeling"
+  },
+  {
+    "Destination Name":"Munnar",
+    "State":"Kerala",
+    "Region":"South",
+    "Category":"Nature",
+    "Popular Attraction":"Tea Gardens",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Cochin International",
+    "Nearest Railway Station":"Ernakulam"
+  },
+  {
+    "Destination Name":"Ajanta and Ellora Caves",
+    "State":"Maharashtra",
+    "Region":"West",
+    "Category":"Heritage",
+    "Popular Attraction":"Ajanta Caves",
+    "Accessibility":"Moderate",
+    "Nearest Airport":"Aurangabad Airport",
+    "Nearest Railway Station":"Aurangabad"
+  },
+  {
+    "Destination Name":"Cherrapunji",
+    "State":"Meghalaya",
+    "Region":"East",
+    "Category":"Nature",
+    "Popular Attraction":"Nohkalikai Falls",
+    "Accessibility":"Difficult",
+    "Nearest Airport":"Shillong Airport",
+    "Nearest Railway Station":"Guwahati"
+  }
+]

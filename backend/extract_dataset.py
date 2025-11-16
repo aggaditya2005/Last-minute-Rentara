@@ -16,6 +16,7 @@ def extract_zip(file_name, target_folder="data"):
 
 # Example usage:
 if __name__ == "__main__":
-    extract_zip("flight-price-prediction.zip")
+    # Change the filename here to your Kaggle dataset zip
+    extract_zip("explore-india-a-tourist-destination-dataset.zip")
     # You can also extract more by calling again:
     # extract_zip("trip-advisor-hotel-reviews.zip")
