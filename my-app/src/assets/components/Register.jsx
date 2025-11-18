@@ -28,11 +28,11 @@ const Register = ({ onSwitchToLogin } = {}) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    let timer;
+    let t;
     if (resendTimer > 0) {
-      timer = setInterval(() => setResendTimer((s) => s - 1), 1000);
+      t = setInterval(() => setResendTimer((s) => s - 1), 1000);
     }
-    return () => clearInterval(timer);
+    return () => clearInterval(t);
   }, [resendTimer]);
 
   const startCheck = () => {
@@ -57,10 +57,7 @@ const Register = ({ onSwitchToLogin } = {}) => {
 
   useEffect(() => {
     return () => {
-      if (pollRef.current) {
-        clearInterval(pollRef.current);
-        pollRef.current = null;
-      }
+      if (pollRef.current) clearInterval(pollRef.current);
     };
   }, []);
 
@@ -69,32 +66,22 @@ const Register = ({ onSwitchToLogin } = {}) => {
     setError("");
     setInfo("");
 
-    if (!firstName.trim() || !lastName.trim()) {
-      return setError("Enter full name.");
-    }
-    if (password.length < 8) {
-      return setError("Password must be at least 8 characters.");
-    }
-    if (password !== confirm) {
-      return setError("Passwords do not match.");
-    }
+    if (!firstName.trim() || !lastName.trim()) return setError("Enter your full name.");
+    if (password.length < 8) return setError("Password must be at least 8 characters.");
+    if (password !== confirm) return setError("Passwords do not match.");
 
     setLoading(true);
 
     try {
-      const cred = await createUserWithEmailAndPassword(
-        auth,
-        email.trim(),
-        password
-      );
+      const cred = await createUserWithEmailAndPassword(auth, email.trim(), password);
 
       await updateProfile(cred.user, {
         displayName: `${firstName.trim()} ${lastName.trim()}`,
       });
 
       await setDoc(doc(db, "users", cred.user.uid), {
-        firstName: firstName.trim(),
-        lastName: lastName.trim(),
+        firstName,
+        lastName,
         email: email.trim(),
         uid: cred.user.uid,
         verified: false,
@@ -102,76 +89,72 @@ const Register = ({ onSwitchToLogin } = {}) => {
       });
 
       await sendEmailVerification(cred.user);
-      setInfo("Verification email sent. Please check your inbox.");
+      setInfo("Verification email sent. Check your inbox.");
       setResendTimer(60);
       startCheck();
     } catch (err) {
-      console.error("Registration error:", err);
+      console.error(err);
       setError("Registration failed. Try again.");
     } finally {
       setLoading(false);
     }
   };
 
+  const handleContinue = () => navigate("/services");
+
   const handleResend = async () => {
-    if (!auth.currentUser) return setError("No user session found.");
+    if (!auth.currentUser) return;
 
     try {
       await sendEmailVerification(auth.currentUser);
-      setInfo("Verification email resent.");
       setResendTimer(60);
-    } catch (err) {
-      console.error("Resend error:", err);
+      setInfo("Verification email resent.");
+    } catch {
       setError("Failed to resend email.");
     }
   };
 
-  const handleContinue = () => navigate("/services");
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#08182a] to-[#031021] p-6">
-      <div className="w-full max-w-md p-8 rounded-3xl shadow-xl bg-[#0f1720] border border-white/10">
+    <div className="min-h-screen flex items-center justify-center p-6 bg-[#060E17]">
+      <div className="w-full max-w-md p-10 rounded-3xl bg-[#0C1622]/70 backdrop-blur-xl border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.3)]">
 
-        {/* Branding */}
-        <div className="mb-8 text-center">
-          <h1 className="text-3xl font-bold tracking-tight text-white">RENTARA</h1>
-          <p className="text-xs text-gray-400 mt-1">Create your account</p>
+        <div className="text-center mb-10">
+          <h1 className="text-4xl font-semibold tracking-tight text-white">Create Account</h1>
+          <p className="text-sm text-gray-400 mt-2">Join Rentara and start booking smarter.</p>
         </div>
 
-        <form onSubmit={handleRegister} className="flex flex-col space-y-5">
-          {/* Name */}
+        <form onSubmit={handleRegister} className="space-y-6">
+
           <div className="grid grid-cols-2 gap-3">
             <input
               placeholder="First name"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
-              className="p-3 rounded-xl bg-white/5 text-gray-100 border border-white/10 placeholder-gray-500 focus:outline-none"
+              className="p-3 bg-[#101B29] border border-white/10 rounded-xl text-gray-100 focus:ring-2 focus:ring-[#2E8EF7] outline-none"
             />
             <input
               placeholder="Last name"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
-              className="p-3 rounded-xl bg-white/5 text-gray-100 border border-white/10 placeholder-gray-500 focus:outline-none"
+              className="p-3 bg-[#101B29] border border-white/10 rounded-xl text-gray-100 focus:ring-2 focus:ring-[#2E8EF7] outline-none"
             />
           </div>
 
-          {/* Email */}
           <input
             type="email"
             placeholder="Email address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="p-3 rounded-xl bg-white/5 text-gray-100 border border-white/10 placeholder-gray-500 focus:outline-none"
+            className="p-3 bg-[#101B29] border border-white/10 rounded-xl text-gray-100 focus:ring-2 focus:ring-[#2E8EF7] outline-none w-full"
           />
 
-          {/* Password */}
           <div className="relative">
             <input
               type={showPassword ? "text" : "password"}
               placeholder="Password (8+ characters)"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-3 pr-10 rounded-xl bg-white/5 text-gray-100 border border-white/10 placeholder-gray-500 focus:outline-none"
+              className="p-3 bg-[#101B29] border border-white/10 rounded-xl w-full text-gray-100 focus:ring-2 focus:ring-[#2E8EF7] outline-none"
             />
             <button
               type="button"
@@ -182,14 +165,13 @@ const Register = ({ onSwitchToLogin } = {}) => {
             </button>
           </div>
 
-          {/* Confirm Password */}
           <div className="relative">
             <input
               type={showConfirm ? "text" : "password"}
               placeholder="Confirm password"
               value={confirm}
               onChange={(e) => setConfirm(e.target.value)}
-              className="w-full p-3 pr-10 rounded-xl bg-white/5 text-gray-100 border border-white/10 placeholder-gray-500 focus:outline-none"
+              className="p-3 bg-[#101B29] border border-white/10 rounded-xl w-full text-gray-100 focus:ring-2 focus:ring-[#2E8EF7] outline-none"
             />
             <button
               type="button"
@@ -200,48 +182,42 @@ const Register = ({ onSwitchToLogin } = {}) => {
             </button>
           </div>
 
-          {/* Messages */}
-          {error && <div className="text-red-400 text-sm text-center">{error}</div>}
-          {info && <div className="text-green-400 text-sm text-center">{info}</div>}
+          {error && <div className="text-red-400 text-center text-sm">{error}</div>}
+          {info && <div className="text-green-400 text-center text-sm">{info}</div>}
 
-          {/* CTA */}
           <button
             type={verified ? "button" : "submit"}
             disabled={loading}
             onClick={verified ? handleContinue : undefined}
-            className={`w-full p-3 rounded-xl font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/10 transition ${
-              loading ? "opacity-50 cursor-not-allowed" : ""
-            }`}
+            className="w-full p-3 bg-[#2E8EF7]/20 border border-[#2E8EF7]/30 text-white rounded-xl hover:bg-[#2E8EF7]/30 transition font-semibold text-md"
           >
             {loading ? "Processing..." : verified ? "Continue" : "Register"}
           </button>
 
-          {/* Resend */}
           {!verified && info && (
             <div className="text-xs text-gray-400 text-right">
               {resendTimer > 0 ? (
                 <>Resend available in {resendTimer}s</>
               ) : (
-                <button onClick={handleResend} className="underline text-gray-200">
+                <button onClick={handleResend} className="underline text-[#2E8EF7]">
                   Resend verification email
                 </button>
               )}
             </div>
           )}
 
-          {/* Switch */}
-          <div className="text-sm text-gray-400 text-center">
+          <p className="text-center text-sm text-gray-400">
             Already have an account?{" "}
             <button
               type="button"
               onClick={() =>
                 onSwitchToLogin ? onSwitchToLogin() : navigate("/login")
               }
-              className="underline text-gray-200"
+              className="text-[#2E8EF7] underline"
             >
               Log in
             </button>
-          </div>
+          </p>
         </form>
       </div>
     </div>
