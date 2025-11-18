@@ -8,9 +8,8 @@ import Flight from "./assets/components/Flight"; // Original Listing Page
 import Hotel from "./assets/components/Hotel";
 import FlightSearch from "./assets/components/FlightSearch"; // AI Predictor Component
 import Create from "./assets/components/Create";
-import AIChatBot from './assets/components/AIChatBot';
 import HotelRecommend from "./assets/components/HotelRecommend";
-
+import ChatBot from "./assets/components/ChatBot";
 import "./assets/components/App.css";
 
 function App() {
@@ -36,8 +35,9 @@ function App() {
 
         <Route path="/hotel" element={<Hotel />} />
         <Route path="/create" element={<Create />} />
-        <Route path="/aIChatBot" element={<AIChatBot />} />
+
         <Route path="/hotelRecommend" element={<HotelRecommend />} />
+        <Route path="/chatBot" element={<ChatBot />} />
 
       </Routes>
     </Router>
