@@ -128,8 +128,7 @@ const Register = ({ onSwitchToLogin } = {}) => {
     }
   };
 
-  // Updated navigation
-  const handleContinue = () => navigate("/");
+  const handleContinue = () => navigate("/introduction");
 
   return (
     <div className="login-page">
