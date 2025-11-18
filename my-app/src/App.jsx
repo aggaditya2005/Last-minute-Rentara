@@ -28,10 +28,10 @@ function App() {
     <Router>
       <Routes>
 
-        {/* Step 1 — Splash / Landing */}
-        <Route path="/" element={<RentaraIntro />} />
+        {/* Step 1 — Landing */}
+        <Route path="/" element={<RentaraIntro navigateTo="/register" />} />
 
-        {/* Step 2 — Introduction */}
+        {/* Step 2 — Introduction (optional if used later) */}
         <Route path="/introduction" element={<Introduction />} />
 
         {/* Step 3 — Authentication */}
