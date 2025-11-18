@@ -23,17 +23,17 @@ function App() {
     <Router>
       <Routes>
 
-        {/* Splash / Landing */}
-        <Route path="/" element={<RentaraIntro />} />
+        {/* Default entry → redirect to Introduction */}
+        <Route path="/" element={<Navigate to="/introduction" replace />} />
 
-        {/* Main Introduction → Next step after splash */}
+        {/* First page user sees */}
         <Route path="/introduction" element={<Introduction />} />
 
-        {/* Authentication Flow (comes right after Intro) */}
+        {/* Authentication */}
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
 
-        {/* Main Pages (only after registration + login) */}
+        {/* Main App Pages */}
         <Route path="/services" element={<Services />} />
         <Route path="/train" element={<Train />} />
         <Route path="/flight" element={<Flight />} />
@@ -43,8 +43,8 @@ function App() {
         <Route path="/hotelRecommend" element={<HotelRecommend />} />
         <Route path="/chatBot" element={<ChatBot />} />
 
-        {/* Fallback route */}
-        <Route path="*" element={<Navigate to="/" replace />} />
+        {/* Fallback */}
+        <Route path="*" element={<Navigate to="/introduction" replace />} />
       </Routes>
     </Router>
   );
