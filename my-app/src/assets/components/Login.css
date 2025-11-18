@@ -1,0 +1,132 @@
+/* Overall page background */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #0a1f44, #05172e);
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Card Container */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 50, 0.4);
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Branding */
+.login-title {
+  text-align: center;
+  color: white;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.login-subtitle {
+  text-align: center;
+  color: #bcd4ff;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Inputs */
+.login-input {
+  width: 100%;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #eaf3ff;
+  border-radius: 12px;
+  font-size: 15px;
+  margin-bottom: 18px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.login-input::placeholder {
+  color: #a5bddb;
+}
+
+.login-input:focus {
+  border-color: #409cff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Password Eye Icon */
+.password-wrapper {
+  position: relative;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  color: #c8d9f2;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.password-toggle:hover {
+  color: white;
+}
+
+/* Error Text */
+.error-text {
+  color: #ff6b6b;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+/* Button */
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  background: #3b82f6;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  transition: 0.3s;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.login-btn:hover {
+  background: #1e6ff7;
+}
+
+.login-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Register link */
+.register-text {
+  text-align: center;
+  margin-top: 10px;
+  color: #a5bddb;
+  font-size: 14px;
+}
+
+.register-link {
+  color: #ffffff;
+  text-decoration: underline;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
