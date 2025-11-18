@@ -128,19 +128,18 @@ const Register = ({ onSwitchToLogin } = {}) => {
     }
   };
 
-  const handleContinue = () => navigate("/services");
+  // Updated navigation
+  const handleContinue = () => navigate("/");
 
   return (
     <div className="login-page">
       <div className="login-card">
-        {/* Branding */}
         <div className="mb-8 text-center">
           <h1 className="login-title">RENTARA</h1>
           <p className="login-subtitle">Create your account</p>
         </div>
 
         <form onSubmit={handleRegister} className="flex flex-col">
-          {/* Name (two columns via inline style) */}
           <div
             style={{
               display: "grid",
@@ -163,7 +162,6 @@ const Register = ({ onSwitchToLogin } = {}) => {
             />
           </div>
 
-          {/* Email */}
           <input
             type="email"
             placeholder="Email address"
@@ -172,7 +170,6 @@ const Register = ({ onSwitchToLogin } = {}) => {
             className="login-input"
           />
 
-          {/* Password */}
           <div className="password-wrapper" style={{ marginBottom: 12 }}>
             <input
               type={showPassword ? "text" : "password"}
@@ -186,13 +183,11 @@ const Register = ({ onSwitchToLogin } = {}) => {
               type="button"
               onClick={() => setShowPassword((s) => !s)}
               className="password-toggle"
-              aria-label={showPassword ? "Hide password" : "Show password"}
             >
               {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
             </button>
           </div>
 
-          {/* Confirm Password */}
           <div className="password-wrapper" style={{ marginBottom: 8 }}>
             <input
               type={showConfirm ? "text" : "password"}
@@ -206,15 +201,11 @@ const Register = ({ onSwitchToLogin } = {}) => {
               type="button"
               onClick={() => setShowConfirm((s) => !s)}
               className="password-toggle"
-              aria-label={
-                showConfirm ? "Hide confirm password" : "Show confirm password"
-              }
             >
               {showConfirm ? <EyeOff size={18} /> : <Eye size={18} />}
             </button>
           </div>
 
-          {/* Messages */}
           {error && <div className="error-text">{error}</div>}
           {info && (
             <div className="info-text" style={{ color: "#8de08d", textAlign: "center", marginBottom: 6 }}>
@@ -222,7 +213,6 @@ const Register = ({ onSwitchToLogin } = {}) => {
             </div>
           )}
 
-          {/* CTA */}
           <button
             type={verified ? "button" : "submit"}
             disabled={loading}
@@ -233,7 +223,6 @@ const Register = ({ onSwitchToLogin } = {}) => {
             {loading ? "Processing..." : verified ? "Continue" : "Register"}
           </button>
 
-          {/* Resend */}
           {!verified && info && (
             <div style={{ textAlign: "right", fontSize: 13, color: "#9fb7dd", marginTop: 8 }}>
               {resendTimer > 0 ? (
@@ -246,7 +235,6 @@ const Register = ({ onSwitchToLogin } = {}) => {
             </div>
           )}
 
-          {/* Switch */}
           <div className="register-text" style={{ marginTop: 12 }}>
             Already have an account?{" "}
             <button
