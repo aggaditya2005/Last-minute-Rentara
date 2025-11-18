@@ -25,11 +25,10 @@ const Login = ({ onSuccess, onSwitchToRegister } = {}) => {
     if (!EMAIL_REGEX.test(email.trim())) {
       return setError("Enter a valid email address.");
     }
-    if (!password) {
-      return setError("Password is required.");
-    }
+    if (!password) return setError("Password is required.");
 
     setLoading(true);
+
     try {
       const q = query(collection(db, "users"), where("email", "==", email.trim()));
       const snap = await getDocs(q);
@@ -53,7 +52,7 @@ const Login = ({ onSuccess, onSwitchToRegister } = {}) => {
       onSuccess?.(cred.user.uid);
       navigate("/services");
     } catch (err) {
-      console.error("Login error:", err);
+      console.error("Error:", err);
       setError("Invalid email or password.");
     } finally {
       setLoading(false);
@@ -61,70 +60,73 @@ const Login = ({ onSuccess, onSwitchToRegister } = {}) => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#08182a] to-[#031021] p-6">
-      <div className="w-full max-w-md p-8 rounded-3xl shadow-xl bg-[#0f1720] border border-white/10">
+    <div className="min-h-screen flex items-center justify-center p-6 bg-[#060E17]">
+      <div className="w-full max-w-md p-10 rounded-3xl bg-[#0C1622]/70 backdrop-blur-xl border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.3)]">
 
         {/* Branding */}
-        <div className="mb-8 text-center">
-          <h1 className="text-3xl font-bold tracking-tight text-white">RENTARA</h1>
-          <p className="text-xs text-gray-400 mt-1">Smart bookings, smarter prices</p>
+        <div className="text-center mb-10">
+          <h1 className="text-4xl font-semibold tracking-tight text-white">Rentara</h1>
+          <p className="text-sm text-gray-400 mt-2">Smart bookings. Premium experience.</p>
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="flex flex-col space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-6">
 
-          <input
-            ref={emailRef}
-            type="email"
-            placeholder="Email address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="p-3 rounded-xl bg-white/5 text-gray-100 border border-white/10 placeholder-gray-500 focus:outline-none"
-          />
-
-          <div className="relative">
+          <div>
+            <label className="text-sm text-gray-300 px-1">Email Address</label>
             <input
-              ref={passwordRef}
-              type={showPassword ? "text" : "password"}
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-3 pr-10 rounded-xl bg-white/5 text-gray-100 border border-white/10 placeholder-gray-500 focus:outline-none"
+              ref={emailRef}
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="mt-2 p-3 w-full bg-[#101B29] border border-white/10 rounded-xl text-gray-100 focus:ring-2 focus:ring-[#2E8EF7] outline-none"
             />
-            <button
-              type="button"
-              onClick={() => setShowPassword((s) => !s)}
-              className="absolute right-3 top-3 text-gray-400"
-            >
-              {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-            </button>
           </div>
 
-          {error && <div className="text-red-400 text-sm text-center">{error}</div>}
+          <div>
+            <label className="text-sm text-gray-300 px-1">Password</label>
+            <div className="relative mt-2">
+              <input
+                ref={passwordRef}
+                type={showPassword ? "text" : "password"}
+                placeholder="Enter your password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="p-3 w-full bg-[#101B29] border border-white/10 rounded-xl text-gray-100 focus:ring-2 focus:ring-[#2E8EF7] outline-none"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword((s) => !s)}
+                className="absolute right-3 top-3 text-gray-400"
+              >
+                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              </button>
+            </div>
+          </div>
+
+          {error && <p className="text-red-400 text-sm text-center">{error}</p>}
 
           <button
             type="submit"
             disabled={loading}
-            className={`w-full p-3 rounded-xl font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/10 transition ${
-              loading ? "opacity-50 cursor-not-allowed" : ""
-            }`}
+            className="w-full p-3 rounded-xl bg-[#2E8EF7]/20 border border-[#2E8EF7]/30 text-white font-semibold hover:bg-[#2E8EF7]/30 transition-all shadow-lg"
           >
             {loading ? "Signing in..." : "Sign In"}
           </button>
 
-          <div className="text-sm text-gray-400 text-center">
-            Don’t have an account?{" "}
+          <p className="text-center text-sm text-gray-400">
+            New here?{" "}
             <button
               type="button"
               onClick={() =>
                 onSwitchToRegister ? onSwitchToRegister() : navigate("/register")
               }
-              className="underline text-gray-200"
+              className="text-[#2E8EF7] underline"
             >
-              Register
+              Create an account
             </button>
-          </div>
-
+          </p>
         </form>
       </div>
     </div>
