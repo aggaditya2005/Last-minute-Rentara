@@ -1,3 +1,4 @@
+// File: Register.jsx
 import React, { useEffect, useRef, useState } from "react";
 import {
   createUserWithEmailAndPassword,
@@ -9,29 +10,32 @@ import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 import { auth, db } from "../../firebase";
 import { Eye, EyeOff } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import "./Login.css";
 
 const Register = ({ onSwitchToLogin } = {}) => {
-  const [first, setFirst] = useState("");
-  const [last, setLast] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [pass, setPass] = useState("");
-  const [cpass, setCpass] = useState("");
-  const [show1, setShow1] = useState(false);
-  const [show2, setShow2] = useState(false);
+  const [password, setPassword] = useState("");
+  const [confirm, setConfirm] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
   const [loading, setLoading] = useState(false);
   const [verified, setVerified] = useState(false);
   const [info, setInfo] = useState("");
-  const [err, setErr] = useState("");
-  const [resend, setResend] = useState(0);
+  const [error, setError] = useState("");
+  const [resendTimer, setResendTimer] = useState(0);
 
   const pollRef = useRef(null);
   const navigate = useNavigate();
 
   useEffect(() => {
-    let t;
-    if (resend > 0) t = setInterval(() => setResend((s) => s - 1), 1000);
-    return () => clearInterval(t);
-  }, [resend]);
+    let timer;
+    if (resendTimer > 0) {
+      timer = setInterval(() => setResendTimer((s) => s - 1), 1000);
+    }
+    return () => clearInterval(timer);
+  }, [resendTimer]);
 
   const startCheck = () => {
     if (pollRef.current) return;
@@ -39,41 +43,60 @@ const Register = ({ onSwitchToLogin } = {}) => {
     pollRef.current = setInterval(async () => {
       if (!auth.currentUser) return;
 
-      await reload(auth.currentUser);
-      if (auth.currentUser.emailVerified) {
-        clearInterval(pollRef.current);
-        pollRef.current = null;
-        setVerified(true);
-        setInfo("Email verified. Continue.");
+      try {
+        await reload(auth.currentUser);
+        if (auth.currentUser.emailVerified) {
+          clearInterval(pollRef.current);
+          pollRef.current = null;
+          setVerified(true);
+          setInfo("Email verified. You can continue.");
+        }
+      } catch (err) {
+        console.error("Reload error:", err);
       }
     }, 3000);
   };
 
   useEffect(() => {
-    return () => pollRef.current && clearInterval(pollRef.current);
+    return () => {
+      if (pollRef.current) {
+        clearInterval(pollRef.current);
+        pollRef.current = null;
+      }
+    };
   }, []);
 
-  const submit = async (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
-    setErr("");
+    setError("");
     setInfo("");
 
-    if (!first.trim() || !last.trim()) return setErr("Enter full name.");
-    if (pass.length < 8) return setErr("Password must be 8+ characters.");
-    if (pass !== cpass) return setErr("Passwords do not match.");
+    if (!firstName.trim() || !lastName.trim()) {
+      return setError("Enter full name.");
+    }
+    if (password.length < 8) {
+      return setError("Password must be at least 8 characters.");
+    }
+    if (password !== confirm) {
+      return setError("Passwords do not match.");
+    }
 
     setLoading(true);
 
     try {
-      const cred = await createUserWithEmailAndPassword(auth, email.trim(), pass);
+      const cred = await createUserWithEmailAndPassword(
+        auth,
+        email.trim(),
+        password
+      );
 
       await updateProfile(cred.user, {
-        displayName: `${first} ${last}`,
+        displayName: `${firstName.trim()} ${lastName.trim()}`,
       });
 
       await setDoc(doc(db, "users", cred.user.uid), {
-        first,
-        last,
+        firstName: firstName.trim(),
+        lastName: lastName.trim(),
         email: email.trim(),
         uid: cred.user.uid,
         verified: false,
@@ -81,144 +104,162 @@ const Register = ({ onSwitchToLogin } = {}) => {
       });
 
       await sendEmailVerification(cred.user);
-
-      setInfo("Verification email sent.");
-      setResend(60);
+      setInfo("Verification email sent. Please check your inbox.");
+      setResendTimer(60);
       startCheck();
-    } catch {
-      setErr("Registration failed. Try again.");
+    } catch (err) {
+      console.error("Registration error:", err);
+      setError("Registration failed. Try again.");
     } finally {
       setLoading(false);
     }
   };
 
+  const handleResend = async () => {
+    if (!auth.currentUser) return setError("No user session found.");
+
+    try {
+      await sendEmailVerification(auth.currentUser);
+      setInfo("Verification email resent.");
+      setResendTimer(60);
+    } catch (err) {
+      console.error("Resend error:", err);
+      setError("Failed to resend email.");
+    }
+  };
+
+  const handleContinue = () => navigate("/services");
+
   return (
-    <div className="min-h-screen flex bg-[#050B15]">
-
-      {/* Branding Side */}
-      <div className="hidden lg:flex flex-col justify-center items-start w-1/2 px-20 bg-gradient-to-br from-[#0A1628] to-[#02060C] border-r border-white/10">
-        <h1 className="text-6xl font-bold text-white tracking-tight">Join Rentara</h1>
-
-        <p className="text-xl text-gray-300 mt-6 leading-relaxed">
-          Experience premium travel bookings.<br />
-          Fast. Secure. Beautifully designed.
-        </p>
-
-        <div className="mt-12 w-32 h-1 bg-[#2E8EF7] rounded-full" />
-      </div>
-
-      {/* Form Side */}
-      <div className="flex justify-center items-center w-full lg:w-1/2 px-6">
-        <div className="w-full max-w-md bg-white/5 backdrop-blur-xl p-10 rounded-3xl border border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.4)]">
-
-          <h2 className="text-3xl text-white font-semibold">Create Account</h2>
-          <p className="text-gray-400 text-sm mt-1 mb-8">Join the Rentara network</p>
-
-          <form onSubmit={submit} className="space-y-6">
-
-            <div className="grid grid-cols-2 gap-3">
-              <input
-                placeholder="First name"
-                className="p-4 bg-[#0D1625] border border-white/10 rounded-xl text-white focus:ring-2 focus:ring-[#2E8EF7]"
-                value={first}
-                onChange={(e) => setFirst(e.target.value)}
-              />
-              <input
-                placeholder="Last name"
-                className="p-4 bg-[#0D1625] border border-white/10 rounded-xl text-white focus:ring-2 focus:ring-[#2E8EF7]"
-                value={last}
-                onChange={(e) => setLast(e.target.value)}
-              />
-            </div>
-
-            <input
-              placeholder="Email address"
-              type="email"
-              className="p-4 bg-[#0D1625] border border-white/10 rounded-xl text-white focus:ring-2 focus:ring-[#2E8EF7] w-full"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-
-            <div className="relative">
-              <input
-                type={show1 ? "text" : "password"}
-                placeholder="Password"
-                className="p-4 w-full bg-[#0D1625] border border-white/10 rounded-xl text-white focus:ring-2 focus:ring-[#2E8EF7]"
-                value={pass}
-                onChange={(e) => setPass(e.target.value)}
-              />
-              <button
-                type="button"
-                className="absolute right-4 top-5 text-gray-400"
-                onClick={() => setShow1((s) => !s)}
-              >
-                {show1 ? <EyeOff size={18} /> : <Eye size={18} />}
-              </button>
-            </div>
-
-            <div className="relative">
-              <input
-                type={show2 ? "text" : "password"}
-                placeholder="Confirm password"
-                className="p-4 w-full bg-[#0D1625] border border-white/10 rounded-xl text-white focus:ring-2 focus:ring-[#2E8EF7]"
-                value={cpass}
-                onChange={(e) => setCpass(e.target.value)}
-              />
-              <button
-                type="button"
-                className="absolute right-4 top-5 text-gray-400"
-                onClick={() => setShow2((s) => !s)}
-              >
-                {show2 ? <EyeOff size={18} /> : <Eye size={18} />}
-              </button>
-            </div>
-
-            {err && <p className="text-red-400 text-sm text-center">{err}</p>}
-            {info && <p className="text-green-400 text-sm text-center">{info}</p>}
-
-            <button
-              type={verified ? "button" : "submit"}
-              disabled={loading}
-              className="w-full py-4 rounded-xl bg-[#2E8EF7] hover:bg-[#2E8EF7]/90 text-white font-semibold text-lg transition"
-              onClick={verified ? () => navigate("/services") : undefined}
-            >
-              {loading ? "Processing..." : verified ? "Continue" : "Register"}
-            </button>
-
-            {!verified && info && (
-              <p className="text-right text-sm text-gray-400">
-                {resend > 0 ? (
-                  <>Resend in {resend}s</>
-                ) : (
-                  <button
-                    type="button"
-                    onClick={async () => {
-                      await sendEmailVerification(auth.currentUser);
-                      setResend(60);
-                      setInfo("Verification email resent.");
-                    }}
-                    className="text-[#2E8EF7] underline"
-                  >
-                    Resend email
-                  </button>
-                )}
-              </p>
-            )}
-
-            <p className="text-sm text-gray-400 text-center">
-              Already have an account?{" "}
-              <button
-                type="button"
-                onClick={() =>
-                  onSwitchToLogin ? onSwitchToLogin() : navigate("/login")
-                }
-                className="text-[#2E8EF7] underline"
-              >
-                Log in
-              </button>
-            </p>
-          </form>
+    <div className="login-page">
+      <div className="login-card">
+        {/* Branding */}
+        <div className="mb-8 text-center">
+          <h1 className="login-title">RENTARA</h1>
+          <p className="login-subtitle">Create your account</p>
         </div>
+
+        <form onSubmit={handleRegister} className="flex flex-col">
+          {/* Name (two columns via inline style) */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: 12,
+              marginBottom: 12,
+            }}
+          >
+            <input
+              placeholder="First name"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              className="login-input"
+            />
+            <input
+              placeholder="Last name"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              className="login-input"
+            />
+          </div>
+
+          {/* Email */}
+          <input
+            type="email"
+            placeholder="Email address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="login-input"
+          />
+
+          {/* Password */}
+          <div className="password-wrapper" style={{ marginBottom: 12 }}>
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="Password (8+ characters)"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="login-input"
+              style={{ paddingRight: 44 }}
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword((s) => !s)}
+              className="password-toggle"
+              aria-label={showPassword ? "Hide password" : "Show password"}
+            >
+              {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+            </button>
+          </div>
+
+          {/* Confirm Password */}
+          <div className="password-wrapper" style={{ marginBottom: 8 }}>
+            <input
+              type={showConfirm ? "text" : "password"}
+              placeholder="Confirm password"
+              value={confirm}
+              onChange={(e) => setConfirm(e.target.value)}
+              className="login-input"
+              style={{ paddingRight: 44 }}
+            />
+            <button
+              type="button"
+              onClick={() => setShowConfirm((s) => !s)}
+              className="password-toggle"
+              aria-label={
+                showConfirm ? "Hide confirm password" : "Show confirm password"
+              }
+            >
+              {showConfirm ? <EyeOff size={18} /> : <Eye size={18} />}
+            </button>
+          </div>
+
+          {/* Messages */}
+          {error && <div className="error-text">{error}</div>}
+          {info && (
+            <div className="info-text" style={{ color: "#8de08d", textAlign: "center", marginBottom: 6 }}>
+              {info}
+            </div>
+          )}
+
+          {/* CTA */}
+          <button
+            type={verified ? "button" : "submit"}
+            disabled={loading}
+            onClick={verified ? handleContinue : undefined}
+            className={`login-btn ${loading ? "btn-loading" : ""}`}
+            style={{ marginTop: 6 }}
+          >
+            {loading ? "Processing..." : verified ? "Continue" : "Register"}
+          </button>
+
+          {/* Resend */}
+          {!verified && info && (
+            <div style={{ textAlign: "right", fontSize: 13, color: "#9fb7dd", marginTop: 8 }}>
+              {resendTimer > 0 ? (
+                <>Resend available in {resendTimer}s</>
+              ) : (
+                <button onClick={handleResend} className="register-link">
+                  Resend verification email
+                </button>
+              )}
+            </div>
+          )}
+
+          {/* Switch */}
+          <div className="register-text" style={{ marginTop: 12 }}>
+            Already have an account?{" "}
+            <button
+              type="button"
+              onClick={() =>
+                onSwitchToLogin ? onSwitchToLogin() : navigate("/login")
+              }
+              className="register-link"
+            >
+              Log in
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );
