@@ -54,8 +54,7 @@ const Login = ({ onSuccess, onSwitchToRegister } = {}) => {
       localStorage.setItem("user_id", cred.user.uid);
       onSuccess?.(cred.user.uid);
 
-      // Updated navigation
-      navigate("/");
+      navigate("/introduction");
     } catch (err) {
       console.error("Login error:", err);
       setError("Invalid email or password.");
