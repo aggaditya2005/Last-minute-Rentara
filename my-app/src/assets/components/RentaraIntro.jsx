@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import "./App.css";
 
 const RentaraIntro = () => {
@@ -23,6 +22,7 @@ const RentaraIntro = () => {
   const [factIndex, setFactIndex] = useState(0);
   const [fade, setFade] = useState(true);
 
+  // Slogan rotation
   useEffect(() => {
     const sloganInterval = setInterval(() => {
       setFade(false);
@@ -31,9 +31,11 @@ const RentaraIntro = () => {
         setFade(true);
       }, 1000);
     }, 3000);
+
     return () => clearInterval(sloganInterval);
   }, []);
 
+  // Fact rotation
   useEffect(() => {
     const factInterval = setInterval(() => {
       setFade(false);
@@ -42,26 +44,31 @@ const RentaraIntro = () => {
         setFade(true);
       }, 1000);
     }, 4000);
+
     return () => clearInterval(factInterval);
   }, []);
 
+  // Auto redirect after animation
   useEffect(() => {
     const timer = setTimeout(() => {
       document.body.style.opacity = "0";
       setTimeout(() => {
-        window.location.href = "/introduction";
+        window.location.href = "/register"; 
       }, 1500);
     }, 10000);
+
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div className="rentara-intro-container">
       <h1 className="rentara-title">Rentara</h1>
-      <h2 className={`rentara-slogan ${fade ? 'fade-in' : 'fade-out'}`}>
+
+      <h2 className={`rentara-slogan ${fade ? "fade-in" : "fade-out"}`}>
         {slogans[sloganIndex]}
       </h2>
-      <div className={`rentara-facts ${fade ? 'fade-in' : 'fade-out'}`}>
+
+      <div className={`rentara-facts ${fade ? "fade-in" : "fade-out"}`}>
         {facts[factIndex]}
       </div>
     </div>
