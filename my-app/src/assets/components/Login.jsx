@@ -1,13 +1,12 @@
-// src/assets/components/Login.jsx
 import React, { useRef, useState } from "react";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { auth, db } from "../../firebase";
 import { Eye, EyeOff } from "lucide-react";
-import FrostedCard from "../components/FrostedCard";
 import { useNavigate } from "react-router-dom";
 
-const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+const EMAIL_REGEX =
+  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
 const Login = ({ onSuccess, onSwitchToRegister } = {}) => {
   const emailRef = useRef(null);
@@ -34,7 +33,10 @@ const Login = ({ onSuccess, onSwitchToRegister } = {}) => {
 
     setLoading(true);
     try {
-      const q = query(collection(db, "users"), where("email", "==", email.trim()));
+      const q = query(
+        collection(db, "users"),
+        where("email", "==", email.trim())
+      );
       const snap = await getDocs(q);
       if (snap.empty) {
         setError("Email not registered.");
@@ -42,7 +44,11 @@ const Login = ({ onSuccess, onSwitchToRegister } = {}) => {
         return;
       }
 
-      const cred = await signInWithEmailAndPassword(auth, email.trim(), password);
+      const cred = await signInWithEmailAndPassword(
+        auth,
+        email.trim(),
+        password
+      );
 
       if (!cred.user.emailVerified) {
         await signOut(auth);
@@ -64,25 +70,36 @@ const Login = ({ onSuccess, onSwitchToRegister } = {}) => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#08182a] to-[#031021] p-6">
-      <FrostedCard className="max-w-md w-full p-8 bg-[#0f1720d9] backdrop-blur-2xl border border-white/8 rounded-3xl shadow-2xl">
-        <div className="mb-6 text-center">
-          <div className="text-3xl font-extrabold tracking-tight text-white">RENTARA</div>
-          <div className="text-xs text-gray-400 mt-1">Smart bookings, smarter prices</div>
+      <div className="w-full max-w-md p-8 rounded-3xl shadow-xl bg-[#0f1720] border border-white/10">
+
+        {/* Branding */}
+        <div className="mb-8 text-center">
+          <h1 className="text-3xl font-bold text-white tracking-wide">
+            RENTARA
+          </h1>
+          <p className="text-xs text-gray-400 mt-1">
+            Smart bookings, smarter prices
+          </p>
         </div>
 
+        {/* Form */}
         <form onSubmit={handleSubmit} className="flex flex-col space-y-5">
-          <h2 className="text-xl font-semibold text-white text-center">Sign in to Rentara</h2>
+          <h2 className="text-xl font-semibold text-white text-center">
+            Sign in to Rentara
+          </h2>
 
+          {/* Email */}
           <input
             ref={emailRef}
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-3 rounded-xl bg-white/5 text-gray-200 placeholder-gray-500 focus:ring-0 focus:outline-none border border-white/10"
+            className="w-full p-3 rounded-xl bg-white/5 text-gray-100 placeholder-gray-500 border border-white/10 focus:outline-none"
             autoComplete="email"
           />
 
+          {/* Password */}
           <div className="relative">
             <input
               ref={passwordRef}
@@ -90,7 +107,7 @@ const Login = ({ onSuccess, onSwitchToRegister } = {}) => {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-3 pr-10 rounded-xl bg-white/5 text-gray-200 placeholder-gray-500 focus:ring-0 focus:outline-none border border-white/10"
+              className="w-full p-3 pr-10 rounded-xl bg-white/5 text-gray-100 placeholder-gray-500 border border-white/10 focus:outline-none"
               autoComplete="current-password"
             />
             <button
@@ -103,18 +120,23 @@ const Login = ({ onSuccess, onSwitchToRegister } = {}) => {
             </button>
           </div>
 
-          {error && <div className="text-red-400 text-sm text-center">{error}</div>}
+          {/* Error */}
+          {error && (
+            <div className="text-red-400 text-sm text-center">{error}</div>
+          )}
 
+          {/* Submit */}
           <button
             type="submit"
             disabled={loading}
-            className={`w-full p-3 rounded-xl font-medium transition-all bg-white/10 hover:bg-white/20 text-white border border-white/10 ${
+            className={`w-full p-3 rounded-xl font-medium bg-white/10 hover:bg-white/20 text-white border border-white/10 transition ${
               loading ? "opacity-50 cursor-not-allowed" : ""
             }`}
           >
             {loading ? "Signing in..." : "Sign In"}
           </button>
 
+          {/* Switch to Register */}
           <div className="text-sm text-gray-400 text-center">
             Don’t have an account?{" "}
             <button
@@ -129,7 +151,7 @@ const Login = ({ onSuccess, onSwitchToRegister } = {}) => {
             </button>
           </div>
         </form>
-      </FrostedCard>
+      </div>
     </div>
   );
 };
