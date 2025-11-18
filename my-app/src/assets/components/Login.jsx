@@ -23,36 +23,28 @@ const Login = ({ onSuccess, onSwitchToRegister } = {}) => {
     setError("");
 
     if (!EMAIL_REGEX.test(email.trim())) {
-      setError("Enter a valid email.");
-      return;
+      return setError("Enter a valid email address.");
     }
     if (!password) {
-      setError("Password is required.");
-      return;
+      return setError("Password is required.");
     }
 
     setLoading(true);
     try {
-      const q = query(
-        collection(db, "users"),
-        where("email", "==", email.trim())
-      );
+      const q = query(collection(db, "users"), where("email", "==", email.trim()));
       const snap = await getDocs(q);
+
       if (snap.empty) {
         setError("Email not registered.");
         setLoading(false);
         return;
       }
 
-      const cred = await signInWithEmailAndPassword(
-        auth,
-        email.trim(),
-        password
-      );
+      const cred = await signInWithEmailAndPassword(auth, email.trim(), password);
 
       if (!cred.user.emailVerified) {
         await signOut(auth);
-        setError("Verify your email before logging in.");
+        setError("Please verify your email before logging in.");
         setLoading(false);
         return;
       }
@@ -62,7 +54,7 @@ const Login = ({ onSuccess, onSwitchToRegister } = {}) => {
       navigate("/services");
     } catch (err) {
       console.error("Login error:", err);
-      setError("Invalid credentials or network issue.");
+      setError("Invalid email or password.");
     } finally {
       setLoading(false);
     }
@@ -74,32 +66,22 @@ const Login = ({ onSuccess, onSwitchToRegister } = {}) => {
 
         {/* Branding */}
         <div className="mb-8 text-center">
-          <h1 className="text-3xl font-bold text-white tracking-wide">
-            RENTARA
-          </h1>
-          <p className="text-xs text-gray-400 mt-1">
-            Smart bookings, smarter prices
-          </p>
+          <h1 className="text-3xl font-bold tracking-tight text-white">RENTARA</h1>
+          <p className="text-xs text-gray-400 mt-1">Smart bookings, smarter prices</p>
         </div>
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="flex flex-col space-y-5">
-          <h2 className="text-xl font-semibold text-white text-center">
-            Sign in to Rentara
-          </h2>
 
-          {/* Email */}
           <input
             ref={emailRef}
             type="email"
-            placeholder="Email"
+            placeholder="Email address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-3 rounded-xl bg-white/5 text-gray-100 placeholder-gray-500 border border-white/10 focus:outline-none"
-            autoComplete="email"
+            className="p-3 rounded-xl bg-white/5 text-gray-100 border border-white/10 placeholder-gray-500 focus:outline-none"
           />
 
-          {/* Password */}
           <div className="relative">
             <input
               ref={passwordRef}
@@ -107,49 +89,42 @@ const Login = ({ onSuccess, onSwitchToRegister } = {}) => {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-3 pr-10 rounded-xl bg-white/5 text-gray-100 placeholder-gray-500 border border-white/10 focus:outline-none"
-              autoComplete="current-password"
+              className="w-full p-3 pr-10 rounded-xl bg-white/5 text-gray-100 border border-white/10 placeholder-gray-500 focus:outline-none"
             />
             <button
               type="button"
               onClick={() => setShowPassword((s) => !s)}
-              className="absolute right-3 top-3 text-gray-400 hover:text-gray-200"
-              aria-label={showPassword ? "Hide password" : "Show password"}
+              className="absolute right-3 top-3 text-gray-400"
             >
               {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
             </button>
           </div>
 
-          {/* Error */}
-          {error && (
-            <div className="text-red-400 text-sm text-center">{error}</div>
-          )}
+          {error && <div className="text-red-400 text-sm text-center">{error}</div>}
 
-          {/* Submit */}
           <button
             type="submit"
             disabled={loading}
-            className={`w-full p-3 rounded-xl font-medium bg-white/10 hover:bg-white/20 text-white border border-white/10 transition ${
+            className={`w-full p-3 rounded-xl font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/10 transition ${
               loading ? "opacity-50 cursor-not-allowed" : ""
             }`}
           >
             {loading ? "Signing in..." : "Sign In"}
           </button>
 
-          {/* Switch to Register */}
           <div className="text-sm text-gray-400 text-center">
             Don’t have an account?{" "}
             <button
               type="button"
-              onClick={() => {
-                if (onSwitchToRegister) onSwitchToRegister();
-                else navigate("/register");
-              }}
-              className="text-gray-200 underline hover:text-white"
+              onClick={() =>
+                onSwitchToRegister ? onSwitchToRegister() : navigate("/register")
+              }
+              className="underline text-gray-200"
             >
               Register
             </button>
           </div>
+
         </form>
       </div>
     </div>
