@@ -53,7 +53,9 @@ const Login = ({ onSuccess, onSwitchToRegister } = {}) => {
 
       localStorage.setItem("user_id", cred.user.uid);
       onSuccess?.(cred.user.uid);
-      navigate("/services");
+
+      // Updated navigation
+      navigate("/");
     } catch (err) {
       console.error("Login error:", err);
       setError("Invalid email or password.");
@@ -65,13 +67,11 @@ const Login = ({ onSuccess, onSwitchToRegister } = {}) => {
   return (
     <div className="login-page">
       <div className="login-card">
-        {/* Branding */}
         <div className="mb-8 text-center">
           <h1 className="login-title">RENTARA</h1>
           <p className="login-subtitle">Smart bookings, smarter prices</p>
         </div>
 
-        {/* Form */}
         <form onSubmit={handleSubmit} className="flex flex-col space-y-5">
           <input
             ref={emailRef}
@@ -95,7 +95,6 @@ const Login = ({ onSuccess, onSwitchToRegister } = {}) => {
               type="button"
               onClick={() => setShowPassword((s) => !s)}
               className="password-toggle"
-              aria-label={showPassword ? "Hide password" : "Show password"}
             >
               {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
             </button>
@@ -112,10 +111,12 @@ const Login = ({ onSuccess, onSwitchToRegister } = {}) => {
           </button>
 
           <div className="register-text">
-            Don’t have an account?{' '}
+            Don’t have an account?{" "}
             <button
               type="button"
-              onClick={() => (onSwitchToRegister ? onSwitchToRegister() : navigate("/register"))}
+              onClick={() =>
+                onSwitchToRegister ? onSwitchToRegister() : navigate("/register")
+              }
               className="register-link"
             >
               Register
