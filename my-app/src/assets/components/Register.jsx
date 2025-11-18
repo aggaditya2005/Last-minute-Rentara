@@ -8,7 +8,6 @@ import {
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 import { auth, db } from "../../firebase";
 import { Eye, EyeOff } from "lucide-react";
-import FrostedCard from "../components/FrostedCard";
 import { useNavigate } from "react-router-dom";
 
 const Register = ({ onSwitchToLogin } = {}) => {
@@ -24,9 +23,11 @@ const Register = ({ onSwitchToLogin } = {}) => {
   const [info, setInfo] = useState("");
   const [verified, setVerified] = useState(false);
   const [resendTimer, setResendTimer] = useState(0);
+
   const pollRef = useRef(null);
   const navigate = useNavigate();
 
+  // Resend countdown timer
   useEffect(() => {
     let t;
     if (resendTimer > 0) {
@@ -35,6 +36,7 @@ const Register = ({ onSwitchToLogin } = {}) => {
     return () => clearInterval(t);
   }, [resendTimer]);
 
+  // Poll email verification status
   const startCheck = () => {
     if (pollRef.current) return;
     pollRef.current = setInterval(async () => {
@@ -54,6 +56,7 @@ const Register = ({ onSwitchToLogin } = {}) => {
     }, 4000);
   };
 
+  // Cleanup polling on unmount
   useEffect(() => {
     return () => {
       if (pollRef.current) {
@@ -82,10 +85,19 @@ const Register = ({ onSwitchToLogin } = {}) => {
     }
 
     setLoading(true);
-    try {
-      const cred = await createUserWithEmailAndPassword(auth, email.trim(), password);
-      await updateProfile(cred.user, { displayName: `${firstName.trim()} ${lastName.trim()}` });
 
+    try {
+      const cred = await createUserWithEmailAndPassword(
+        auth,
+        email.trim(),
+        password
+      );
+
+      await updateProfile(cred.user, {
+        displayName: `${firstName.trim()} ${lastName.trim()}`,
+      });
+
+      // Add user to Firestore
       await setDoc(doc(db, "users", cred.user.uid), {
         firstName: firstName.trim(),
         lastName: lastName.trim(),
@@ -95,10 +107,12 @@ const Register = ({ onSwitchToLogin } = {}) => {
         createdAt: serverTimestamp(),
       });
 
+      // Send email verification
       await sendEmailVerification(cred.user);
       setInfo("Verification email sent.");
       setResendTimer(60);
       startCheck();
+
     } catch (err) {
       console.error("Registration error:", err);
       setError("Registration failed. Try again.");
@@ -108,7 +122,11 @@ const Register = ({ onSwitchToLogin } = {}) => {
   };
 
   const handleResend = async () => {
-    if (!auth.currentUser) return setError("No user session found.");
+    if (!auth.currentUser) {
+      setError("No user session found.");
+      return;
+    }
+
     try {
       await sendEmailVerification(auth.currentUser);
       setInfo("Verification email resent.");
@@ -125,49 +143,54 @@ const Register = ({ onSwitchToLogin } = {}) => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#08182a] to-[#031021] p-6">
-      <FrostedCard className="max-w-md w-full p-8 bg-[#0f1720d9] backdrop-blur-2xl border border-white/8 rounded-3xl shadow-2xl">
+      <div className="w-full max-w-md p-8 rounded-3xl shadow-xl bg-[#0f1720] border border-white/10">
+
+        {/* Branding */}
         <div className="mb-6 text-center">
-          <div className="text-3xl font-extrabold tracking-tight text-white">RENTARA</div>
-          <div className="text-xs text-gray-400 mt-1">Create your account</div>
+          <h1 className="text-3xl font-extrabold tracking-tight text-white">RENTARA</h1>
+          <p className="text-xs text-gray-400 mt-1">Create your account</p>
         </div>
 
         <form onSubmit={handleRegister} className="flex flex-col space-y-4">
           <h2 className="text-lg font-semibold text-white text-center">Register</h2>
 
+          {/* Name fields */}
           <div className="grid grid-cols-2 gap-3">
             <input
               placeholder="First name"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
-              className="p-3 rounded-xl bg-white/5 text-gray-200 placeholder-gray-500 focus:ring-0 focus:outline-none border border-white/10"
+              className="p-3 rounded-xl bg-white/5 text-gray-100 placeholder-gray-500 border border-white/10 focus:outline-none"
               required
             />
             <input
               placeholder="Last name"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
-              className="p-3 rounded-xl bg-white/5 text-gray-200 placeholder-gray-500 focus:ring-0 focus:outline-none border border-white/10"
+              className="p-3 rounded-xl bg-white/5 text-gray-100 placeholder-gray-500 border border-white/10 focus:outline-none"
               required
             />
           </div>
 
+          {/* Email */}
           <input
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="p-3 rounded-xl bg-white/5 text-gray-200 placeholder-gray-500 focus:ring-0 focus:outline-none border border-white/10"
+            className="p-3 rounded-xl bg-white/5 text-gray-100 placeholder-gray-500 border border-white/10 focus:outline-none"
             required
             autoComplete="email"
           />
 
+          {/* Password */}
           <div className="relative">
             <input
               type={showPassword ? "text" : "password"}
-              placeholder="Password"
+              placeholder="Password (8+ chars)"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full p-3 pr-10 rounded-xl bg-white/5 text-gray-200 placeholder-gray-500 focus:ring-0 focus:outline-none border border-white/10"
+              className="w-full p-3 pr-10 rounded-xl bg-white/5 text-gray-100 placeholder-gray-500 border border-white/10 focus:outline-none"
               required
               autoComplete="new-password"
             />
@@ -180,13 +203,14 @@ const Register = ({ onSwitchToLogin } = {}) => {
             </button>
           </div>
 
+          {/* Confirm Password */}
           <div className="relative">
             <input
               type={showConfirm ? "text" : "password"}
               placeholder="Confirm password"
               value={confirm}
               onChange={(e) => setConfirm(e.target.value)}
-              className="w-full p-3 pr-10 rounded-xl bg-white/5 text-gray-200 placeholder-gray-500 focus:ring-0 focus:outline-none border border-white/10"
+              className="w-full p-3 pr-10 rounded-xl bg-white/5 text-gray-100 placeholder-gray-500 border border-white/10 focus:outline-none"
               required
               autoComplete="new-password"
             />
@@ -199,22 +223,27 @@ const Register = ({ onSwitchToLogin } = {}) => {
             </button>
           </div>
 
+          {/* Messages */}
           {error && <div className="text-red-400 text-sm text-center">{error}</div>}
           {info && <div className="text-green-400 text-sm text-center">{info}</div>}
 
+          {/* Button */}
           <button
             type={verified ? "button" : "submit"}
             onClick={verified ? handleContinue : undefined}
             disabled={loading}
-            className={`w-full p-3 rounded-xl font-medium transition-all bg-white/10 hover:bg-white/20 text-white border border-white/10 ${
+            className={`w-full p-3 rounded-xl font-medium bg-white/10 hover:bg-white/20 text-white border border-white/10 transition ${
               loading ? "opacity-50 cursor-not-allowed" : ""
             }`}
           >
             {loading ? "Processing..." : verified ? "Continue" : "Register"}
           </button>
 
+          {/* Resend section */}
           {resendTimer > 0 ? (
-            <div className="text-xs text-gray-400 text-right">Resend available in {resendTimer}s</div>
+            <div className="text-xs text-gray-400 text-right">
+              Resend available in {resendTimer}s
+            </div>
           ) : (
             info &&
             !verified && (
@@ -231,6 +260,7 @@ const Register = ({ onSwitchToLogin } = {}) => {
             )
           )}
 
+          {/* Switch to Login */}
           <div className="text-sm text-gray-400 text-center">
             Already have an account?{" "}
             <button
@@ -245,7 +275,7 @@ const Register = ({ onSwitchToLogin } = {}) => {
             </button>
           </div>
         </form>
-      </FrostedCard>
+      </div>
     </div>
   );
 };
