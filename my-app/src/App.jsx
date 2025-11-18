@@ -18,33 +18,101 @@ import ChatBot from "./assets/components/ChatBot";
 
 import "./assets/components/App.css";
 
+function PrivateRoute({ children }) {
+  const isAuthenticated = localStorage.getItem("userLoggedIn") === "true";
+  return isAuthenticated ? children : <Navigate to="/login" replace />;
+}
+
 function App() {
   return (
     <Router>
       <Routes>
 
-        {/* Default entry → redirect to Introduction */}
-        <Route path="/" element={<Navigate to="/introduction" replace />} />
+        {/* Step 1 — Splash / Landing */}
+        <Route path="/" element={<RentaraIntro />} />
 
-        {/* First page user sees */}
+        {/* Step 2 — Introduction */}
         <Route path="/introduction" element={<Introduction />} />
 
-        {/* Authentication */}
+        {/* Step 3 — Authentication */}
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
 
-        {/* Main App Pages */}
-        <Route path="/services" element={<Services />} />
-        <Route path="/train" element={<Train />} />
-        <Route path="/flight" element={<Flight />} />
-        <Route path="/flightSearch" element={<FlightSearch />} />
-        <Route path="/hotel" element={<Hotel />} />
-        <Route path="/create" element={<Create />} />
-        <Route path="/hotelRecommend" element={<HotelRecommend />} />
-        <Route path="/chatBot" element={<ChatBot />} />
+        {/* Step 4 — Main App (Protected) */}
+        <Route
+          path="/services"
+          element={
+            <PrivateRoute>
+              <Services />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/train"
+          element={
+            <PrivateRoute>
+              <Train />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/flight"
+          element={
+            <PrivateRoute>
+              <Flight />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/flightSearch"
+          element={
+            <PrivateRoute>
+              <FlightSearch />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/hotel"
+          element={
+            <PrivateRoute>
+              <Hotel />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/create"
+          element={
+            <PrivateRoute>
+              <Create />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/hotelRecommend"
+          element={
+            <PrivateRoute>
+              <HotelRecommend />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/chatBot"
+          element={
+            <PrivateRoute>
+              <ChatBot />
+            </PrivateRoute>
+          }
+        />
 
         {/* Fallback */}
-        <Route path="*" element={<Navigate to="/introduction" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );
